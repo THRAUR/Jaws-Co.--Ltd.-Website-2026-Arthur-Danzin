@@ -6,6 +6,8 @@
  */
 import { usePathname, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { useTranslation } from '@/lib/i18n/context';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Link from 'next/link';
 import styles from './DashboardSidebar.module.css';
 
@@ -15,14 +17,6 @@ interface DashboardSidebarProps {
   companyName: string;
 }
 
-const navItems = [
-  { href: '/dashboard', label: 'Overview', icon: 'O' },
-  { href: '/dashboard/inquiries', label: 'My Inquiries', icon: 'I' },
-  { href: '/dashboard/favorites', label: 'Favorites', icon: 'F' },
-  { href: '/dashboard/orders', label: 'Orders', icon: 'R' },
-  { href: '/dashboard/profile', label: 'Profile', icon: 'P' },
-];
-
 export default function DashboardSidebar({
   userName,
   userEmail,
@@ -30,6 +24,7 @@ export default function DashboardSidebar({
 }: DashboardSidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const t = useTranslation();
 
   const handleLogout = async () => {
     const supabase = createClient();
@@ -44,6 +39,14 @@ export default function DashboardSidebar({
     }
     return pathname.startsWith(href);
   };
+
+  // Translated nav items
+  const translatedNavItems = [
+    { href: '/dashboard', label: t('dashboard.overview'), icon: 'O' },
+    { href: '/dashboard/inquiries', label: t('dashboard.inquiries'), icon: 'I' },
+    { href: '/dashboard/favorites', label: t('dashboard.favorites'), icon: 'F' },
+    { href: '/dashboard/profile', label: t('dashboard.profile'), icon: 'P' },
+  ];
 
   const initials = userName
     .split(' ')
@@ -60,6 +63,9 @@ export default function DashboardSidebar({
             JAWS <span className={styles.gold}>Client</span>
           </h1>
         </Link>
+        <div className={styles.langSwitcher}>
+          <LanguageSwitcher scope="dashboard" />
+        </div>
       </div>
 
       <div className={styles.userCard}>
@@ -71,7 +77,7 @@ export default function DashboardSidebar({
       </div>
 
       <nav className={styles.nav}>
-        {navItems.map((item) => (
+        {translatedNavItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
@@ -85,13 +91,13 @@ export default function DashboardSidebar({
 
       <div className={styles.footer}>
         <Link href="/quote" className={styles.newInquiry}>
-          + New Quote Request
+          + {t('quote.title')}
         </Link>
         <button onClick={handleLogout} className={styles.logoutBtn}>
-          Sign Out
+          {t('nav.logout')}
         </button>
         <Link href="/" className={styles.viewSite}>
-          Back to Website
+          {t('nav.home')}
         </Link>
       </div>
     </aside>

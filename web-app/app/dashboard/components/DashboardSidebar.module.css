@@ -26,6 +26,10 @@
   color: var(--gold);
 }
 
+.langSwitcher {
+  margin-top: 0.75rem;
+}
+
 .userCard {
   padding: 1.5rem;
   display: flex;

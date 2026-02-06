@@ -26,6 +26,10 @@
   color: var(--gold);
 }
 
+.langSwitcher {
+  margin-top: 0.75rem;
+}
+
 .nav {
   flex: 1;
   padding: 1rem 0;

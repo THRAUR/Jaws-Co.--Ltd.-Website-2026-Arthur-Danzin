@@ -31,8 +31,11 @@ export default function LanguageSwitcher({
     allowedLanguages.includes(code)
   );
 
+  // Use sidebar styling for admin and dashboard scopes
+  const isSidebar = scope === 'admin' || scope === 'dashboard';
+
   return (
-    <div className={`${styles.switcher} ${className}`}>
+    <div className={`${styles.switcher} ${isSidebar ? styles.sidebar : ''} ${className}`}>
       {displayLanguages.map((code, index) => {
         const lang = LANGUAGES[code as LanguageCode];
         const isActive = language === code;
