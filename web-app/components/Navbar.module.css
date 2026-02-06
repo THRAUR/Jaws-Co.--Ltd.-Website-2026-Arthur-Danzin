@@ -1,0 +1,68 @@
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-playfair);
+    letter-spacing: -0.5px;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+.links {
+    display: flex;
+    gap: 40px;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--red);
+    transition: width 0.3s;
+}
+
+.links a:hover::after,
+.links a.active::after {
+    width: 100%;
+}
+
+.cta {
+    background: var(--black);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.cta:hover {
+    background: var(--red);
+}

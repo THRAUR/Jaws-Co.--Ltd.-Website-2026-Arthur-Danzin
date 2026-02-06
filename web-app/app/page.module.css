@@ -1,0 +1,224 @@
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.videoBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.videoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+.heroText {
+    max-width: 60%;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: var(--black);
+}
+
+.hero h1 i {
+    font-family: var(--font-playfair);
+    color: var(--gold);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 40px;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.actions {
+    display: flex;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--red);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform 0.2s;
+    border: 1px solid var(--red);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: #b91d2d;
+}
+
+.btnSec {
+    background: transparent;
+    color: var(--black);
+    border: 2px solid var(--black);
+    margin-left: 20px;
+}
+
+.btnSec:hover {
+    background: var(--black);
+    color: white;
+}
+
+/* Why Us Section */
+.whyUs {
+    background: var(--black);
+    color: var(--gold);
+    padding: 80px 5%;
+}
+
+.whyContainer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.statBox h2 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.statBox p {
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Feature Grid */
+.ftGrid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    min-height: 600px;
+    background: #f4f4f4;
+}
+
+.ftImgPlaceholder {
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.phTextBig {
+    font-size: 1.5rem;
+    color: #888;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.ftContent {
+    padding: 100px 8%;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ftContent h2 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    color: var(--gold);
+}
+
+.ftContent p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.ftLink {
+    color: var(--black);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 2px solid var(--red);
+    display: inline-block;
+    padding-bottom: 5px;
+    width: fit-content;
+}
+
+/* Industries Section */
+.industries {
+    padding: 100px 5%;
+    background: var(--white);
+}
+
+.indHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.indHeader h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.indGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.indCard {
+    border: 1px solid #eee;
+    padding: 40px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.indCard:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    background: var(--off-white);
+}
+
+.indCard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

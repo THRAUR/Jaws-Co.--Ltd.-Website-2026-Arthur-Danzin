@@ -1,0 +1,28 @@
+.footer {
+    padding: 50px 5%;
+    background: var(--off-white);
+    border-top: 1px solid var(--gray-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-playfair);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sub {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.right {
+    text-align: right;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
