@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { useTranslation } from '@/lib/i18n/context';
+import LanguageSwitcher from './LanguageSwitcher';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
     const pathname = usePathname();
     const router = useRouter();
+    const t = useTranslation();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -42,27 +45,28 @@ export default function Navbar() {
         <nav className={styles.nav}>
             <div className={styles.brand}>JAWS <span>CO.</span></div>
             <div className={styles.links}>
-                <Link href="/" className={isActive('/')}>Home</Link>
-                <Link href="/products" className={isActive('/products')}>Products</Link>
-                <Link href="/about" className={isActive('/about')}>About</Link>
-                <Link href="/news" className={isActive('/news')}>News</Link>
-                <Link href="/contact" className={isActive('/contact')}>Contact</Link>
+                <Link href="/" className={isActive('/')}>{t('nav.home')}</Link>
+                <Link href="/products" className={isActive('/products')}>{t('nav.products')}</Link>
+                <Link href="/about" className={isActive('/about')}>{t('nav.about')}</Link>
+                <Link href="/news" className={isActive('/news')}>{t('nav.news')}</Link>
+                <Link href="/contact" className={isActive('/contact')}>{t('nav.contact')}</Link>
             </div>
             <div className={styles.actions}>
+                <LanguageSwitcher scope="public" />
                 {!loading && (
                     user ? (
                         <div className={styles.userMenu}>
                             <Link href="/dashboard" className={styles.dashboardLink}>
-                                My Account
+                                {t('nav.myAccount')}
                             </Link>
                         </div>
                     ) : (
                         <Link href="/login" className={styles.loginLink}>
-                            Login
+                            {t('nav.login')}
                         </Link>
                     )
                 )}
-                <Link href="/quote" className={styles.cta}>Get a Quote</Link>
+                <Link href="/quote" className={styles.cta}>{t('nav.getQuote')}</Link>
             </div>
         </nav>
     );

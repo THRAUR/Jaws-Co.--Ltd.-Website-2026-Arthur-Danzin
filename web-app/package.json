@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "npx tsx scripts/migrate-products.ts"
+    "migrate": "npx tsx scripts/migrate-products.ts",
+    "translate": "npx tsx scripts/translate.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.0",

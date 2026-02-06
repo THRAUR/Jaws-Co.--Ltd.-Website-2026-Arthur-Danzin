@@ -1,0 +1,108 @@
+/* TSMC-style horizontal language switcher */
+
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 20px;
+  padding: 4px 8px;
+}
+
+.langItem {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--black);
+  opacity: 0.5;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  border-radius: 12px;
+}
+
+.langBtn:hover {
+  opacity: 0.8;
+}
+
+.langBtn.active {
+  opacity: 1;
+  color: var(--gold, #C5A059);
+  font-weight: 600;
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.separator {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.15);
+  margin: 0 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .switcher {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+
+  .langBtn {
+    padding: 3px 6px;
+    font-size: 0.75rem;
+  }
+
+  .separator {
+    height: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .switcher {
+    font-size: 0.7rem;
+    gap: 1px;
+    padding: 2px 4px;
+  }
+
+  .langBtn {
+    padding: 2px 4px;
+    font-size: 0.7rem;
+  }
+}
+
+/* For sidebar use (admin/dashboard) */
+.switcher.sidebar {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 10px;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+
+.switcher.sidebar .langBtn {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.switcher.sidebar .langBtn:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.switcher.sidebar .langBtn.active {
+  color: var(--gold, #C5A059);
+  background: rgba(197, 160, 89, 0.15);
+}
+
+.switcher.sidebar .separator {
+  background: rgba(255, 255, 255, 0.2);
+}
