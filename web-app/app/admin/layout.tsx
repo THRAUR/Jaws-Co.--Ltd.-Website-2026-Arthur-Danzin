@@ -29,6 +29,18 @@ export default async function AdminLayout({
     return <>{children}</>;
   }
 
+  // Verify admin role (defense in depth - middleware also checks this)
+  const { data: profile } = await supabase
+    .from('user_profiles')
+    .select('role')
+    .eq('id', user.id)
+    .single();
+
+  if (profile?.role !== 'admin') {
+    // Non-admin users get redirected to client dashboard
+    redirect('/dashboard');
+  }
+
   return (
     <div className={styles.layout}>
       <AdminSidebar userEmail={user.email || ''} />
