@@ -1,3 +1,624 @@
 {
-  "_note": "Italian - Run npm run translate to populate"
+  "nav": {
+    "home": "Home",
+    "products": "Prodotti",
+    "about": "Informazioni",
+    "news": "Notizie",
+    "contact": "Contatti",
+    "getQuote": "Richiedi un preventivo",
+    "login": "Accedi",
+    "myAccount": "Il mio account",
+    "logout": "Esci"
+  },
+  "home": {
+    "heroTitle": "Il gold standard nell'eccellenza dei connettori.",
+    "heroSubtitle": "Combiniamo 50 anni di tradizione manifatturiera taiwanese con la moderna ingegneria di precisione. Colleghiamo le tecnologie più esigenti al mondo.",
+    "viewCatalog": "Visualizza catalogo",
+    "ourStory": "La nostra storia",
+    "stats": {
+      "years": "50+",
+      "yearsLabel": "Anni di esperienza",
+      "taiwan": "100%",
+      "taiwanLabel": "Prodotto a Taiwan",
+      "iso": "Organizzazione internazionale per la normazione",
+      "isoLabel": "Certificato 9001"
+    },
+    "featured": {
+      "title": "Serie da 0,5 mm",
+      "description": "I nostri connettori FPC/FFC di punta progettati per applicazioni ad alta densità. Dotati di robusti meccanismi di bloccaggio e conduttività superiore.",
+      "link": "Esplora le specifiche"
+    },
+    "industries": {
+      "title": "Settori serviti",
+      "subtitle": "Alimentare la prossima generazione di dispositivi.",
+      "automotive": "Automobilistico",
+      "automotiveDesc": "Infotainment e sensori di bordo.",
+      "industrial": "Industriale",
+      "industrialDesc": "Controllo della robotica e dell'automazione.",
+      "consumer": "Consumatore",
+      "consumerDesc": "Computer portatili, tablet e dispositivi indossabili."
+    }
+  },
+  "about": {
+    "heroTitle": "Eccellenza nella produzione dal 1975.",
+    "heroDescription": "Jaws Co., Ltd. non è solo un distributore, ma anche un produttore specializzato con sede a Taipei, Taiwan. In un settore invaso da componenti generici, ci distinguiamo offrendo tracciabilità, purezza dei materiali e capacità di progettazione personalizzata che altri non sono in grado di eguagliare.",
+    "stats": {
+      "years": "50+",
+      "yearsLabel": "Anni di esperienza",
+      "taiwan": "100%",
+      "taiwanLabel": "Prodotto a Taiwan",
+      "iso": "Organizzazione internazionale per la normazione",
+      "isoLabel": "Certificato 9001:2015"
+    },
+    "timeline": {
+      "1975": {
+        "title": "Fondata a Taipei, Taiwan.",
+        "description": "Nata come piccola officina per la produzione di stampi."
+      },
+      "1998": {
+        "title": "Espansione ai connettori FPC",
+        "description": "Lanciata la prima generazione di connettori per circuiti flessibili."
+      },
+      "2010": {
+        "title": "Certificazione ISO 9001",
+        "description": "Abbiamo formalizzato il nostro impegno nei confronti degli standard internazionali di qualità."
+      },
+      "2026": {
+        "title": "La nuova era digitale",
+        "description": "Lancio della nostra nuova piattaforma digitale al servizio degli ingegneri di tutto il mondo."
+      },
+      "title": "Il nostro viaggio"
+    }
+  },
+  "contact": {
+    "title": "Contattaci",
+    "description": "Hai domande sui nostri prodotti? Hai bisogno di assistenza tecnica o desideri discutere soluzioni personalizzate? Il nostro team è qui per aiutarti.",
+    "headquarters": "Sede centrale",
+    "address": "N. 8, Lane 2, Sezione 2, Example Road, Taipei City 110, Taiwan (R.O.C.)",
+    "email": "E-mail",
+    "phone": "Telefono",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Il tuo nome",
+      "email": "E-mail",
+      "emailPlaceholder": "company@email.com",
+      "inquiryType": "Tipo di richiesta",
+      "sample": "Richiesta campioni prodotto",
+      "oem": "Design OEM personalizzato",
+      "technical": "Assistenza tecnica",
+      "message": "Messaggio",
+      "messagePlaceholder": "Raccontaci le tue esigenze di progetto...",
+      "submit": "Invia messaggio",
+      "sending": "Invio..."
+    },
+    "success": {
+      "title": "Grazie!",
+      "message": "La tua richiesta è stata inviata con successo. Il nostro team ti contatterà entro 24 ore.",
+      "reset": "Invia un altro messaggio"
+    },
+    "error": "Si è verificato un errore. Riprova."
+  },
+  "quote": {
+    "title": "Richiedi un preventivo",
+    "description": "Ottieni prezzi competitivi sui nostri connettori di precisione. Compila il modulo sottostante e il nostro team commerciale ti risponderà entro 24 ore lavorative.",
+    "steps": {
+      "submit": "Invia richiesta",
+      "submitDesc": "Fornisci i requisiti e le quantità del tuo prodotto",
+      "receive": "Ricevi preventivo",
+      "receiveDesc": "Il nostro team preparerà un preventivo competitivo entro 24 ore.",
+      "order": "Effettua ordine",
+      "orderDesc": "Conferma il tuo ordine e inizieremo la produzione"
+    },
+    "form": {
+      "fullName": "Nome completo",
+      "fullNamePlaceholder": "John Smith",
+      "company": "Azienda",
+      "companyPlaceholder": "Nome della tua azienda",
+      "email": "Indirizzo e-mail",
+      "emailPlaceholder": "john@company.com",
+      "phone": "Numero di telefono",
+      "phonePlaceholder": "+1 234 567 8900",
+      "productDetails": "Codici prodotto/codici articolo",
+      "productDetailsPlaceholder": "Elenca i nomi dei prodotti o i codici dei componenti che ti interessano...",
+      "quantity": "Quantità stimata",
+      "quantityPlaceholder": "ad esempio, 1.000 unità o 5.000-10.000 unità",
+      "additionalRequirements": "Requisiti aggiuntivi",
+      "additionalRequirementsPlaceholder": "Eventuali requisiti speciali, certificazioni necessarie, tempi di consegna, ecc.",
+      "submit": "Richiedi preventivo",
+      "submitting": "Invio in corso..."
+    },
+    "success": {
+      "title": "Richiesta di preventivo ricevuta!",
+      "message": "Grazie per il tuo interesse. Il nostro team commerciale esaminerà le tue richieste e ti invierà un preventivo dettagliato entro 24 ore lavorative.",
+      "reset": "Invia un'altra richiesta"
+    },
+    "required": "*"
+  },
+  "products": {
+    "title": "Catalogo prodotti",
+    "description": "Esplora la nostra vasta gamma di connettori FFC/FPC e Wire-to-Board. Realizzati con precisione per garantire affidabilità.",
+    "categories": "Categorie",
+    "allProducts": "Tutti i prodotti",
+    "viewDetails": "Visualizza dettagli",
+    "error": "Errore durante il caricamento dei prodotti. Riprova più tardi.",
+    "empty": "Nessun prodotto trovato in questa categoria.",
+    "categoryDescriptions": {
+      "fpc-ffc": {
+        "title": "Connettori FPC e FFC",
+        "description": "Connettori per circuiti stampati flessibili progettati per l'assemblaggio elettronico ad alta densità. Disponibili nelle versioni Zero Insertion Force (ZIF) e Non-ZIF."
+      },
+      "0-5mm": {
+        "title": "Connettori con passo da 0,5 mm",
+        "description": "La nostra serie a passo fine più popolare. Ideale per dispositivi compatti che richiedono elevata affidabilità e integrità del segnale."
+      },
+      "1-0mm": {
+        "title": "Connettori con passo da 1,0 mm",
+        "description": "Robusti connettori a passo standard. Perfetti per applicazioni automobilistiche, industriali e di elettronica di consumo dove la durata è fondamentale."
+      },
+      "1-25mm": {
+        "title": "Connettori con passo da 1,25 mm",
+        "description": "Connettori a passo largo che offrono una resistenza meccanica superiore e un assemblaggio manuale più semplice per dispositivi di grandi dimensioni."
+      },
+      "wire-to-board": {
+        "title": "Soluzioni wire-to-board",
+        "description": "Connessioni sicure tra cavi e scheda con meccanismi di bloccaggio positivo. Progettato per ambienti soggetti a forti vibrazioni."
+      }
+    }
+  },
+  "productDetail": {
+    "breadcrumb": "Prodotti",
+    "specifications": "Specifiche tecniche",
+    "downloadSpec": "Scarica la scheda tecnica (PDF)",
+    "requestQuote": "Richiedi preventivo",
+    "relatedProducts": "Prodotti correlati"
+  },
+  "news": {
+    "title": "Notizie e aggiornamenti",
+    "description": "Rimani informato sui nostri ultimi prodotti, sui traguardi raggiunti dalla nostra azienda e sulle novità del settore.",
+    "comingSoon": "Prossimamente",
+    "comingSoonDesc": "Stiamo lavorando a una notizia entusiasmante da condividere con voi. Tornate presto a trovarci!",
+    "error": "Errore durante il caricamento degli articoli. Riprova più tardi.",
+    "readMore": "Leggi l'articolo"
+  },
+  "footer": {
+    "brand": "JAWS CO., LTD.",
+    "location": "Taipei, Taiwan",
+    "copyright": "Jaws Co., Ltd.",
+    "isoCertified": "Certificato ISO 9001"
+  },
+  "dashboard": {
+    "title": "Il mio pannello di controllo",
+    "welcome": "Bentornato",
+    "overview": "Panoramica",
+    "favorites": "Preferiti",
+    "favoritesDesc": "Prodotti salvati per un accesso rapido",
+    "inquiries": "Le mie richieste",
+    "inquiriesDesc": "Tieni traccia dello stato delle tue richieste inviate",
+    "profile": "Profilo",
+    "profileDesc": "Gestisci le impostazioni del tuo account",
+    "stats": {
+      "favorites": "Preferiti",
+      "inquiries": "Richieste di informazioni",
+      "pending": "In sospeso",
+      "reviewed": "Revisionato"
+    },
+    "empty": {
+      "favorites": "Non hai ancora salvato alcun prodotto.",
+      "inquiries": "Non hai ancora inviato alcuna richiesta.",
+      "browseProducts": "Sfoglia i prodotti",
+      "requestQuote": "Richiedi un preventivo"
+    },
+    "status": {
+      "reviewed": "Revisionato",
+      "pending": "In attesa di revisione"
+    },
+    "source": {
+      "quoteForm": "Modulo di preventivo",
+      "contactForm": "Modulo di contatto"
+    },
+    "type": {
+      "rfq": "Richiesta di preventivo",
+      "sample": "Richiesta di campioni",
+      "oem": "Richiesta OEM",
+      "technical": "Assistenza tecnica"
+    }
+  },
+  "admin": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "products": "Prodotti",
+      "categories": "Categorie",
+      "inquiries": "Richieste di informazioni",
+      "news": "Notizie"
+    },
+    "dashboard": {
+      "title": "Pannello di controllo dell'amministratore",
+      "totalProducts": "Totale prodotti",
+      "totalCategories": "Categorie totali",
+      "totalInquiries": "Richieste totali",
+      "unreadInquiries": "Richieste non lette"
+    },
+    "products": {
+      "title": "Gestione dei prodotti",
+      "addNew": "Aggiungi prodotto",
+      "edit": "Modifica",
+      "delete": "Elimina",
+      "confirmDelete": "Sei sicuro di voler eliminare questo prodotto?",
+      "empty": "Nessun prodotto trovato."
+    },
+    "categories": {
+      "title": "Gestione delle categorie",
+      "addNew": "Aggiungi categoria",
+      "edit": "Modifica",
+      "delete": "Elimina",
+      "confirmDelete": "Sei sicuro di voler eliminare questa categoria?",
+      "empty": "Nessuna categoria trovata."
+    },
+    "inquiries": {
+      "title": "Richieste dei clienti",
+      "markUnread": "Contrassegna come non letto",
+      "delete": "Elimina",
+      "replyViaEmail": "Rispondi via e-mail",
+      "confirmDelete": "Sei sicuro di voler eliminare questa richiesta?",
+      "empty": "Nessuna richiesta ancora. Le richieste inviate tramite il modulo di contatto appariranno qui."
+    },
+    "news": {
+      "title": "Gestione delle notizie",
+      "addNew": "Aggiungi articolo",
+      "edit": "Modifica",
+      "delete": "Elimina",
+      "confirmDelete": "Sei sicuro di voler eliminare questo articolo?",
+      "empty": "Nessun articolo trovato."
+    }
+  },
+  "auth": {
+    "login": "Accedi",
+    "register": "Registrati",
+    "email": "E-mail",
+    "password": "Password",
+    "confirmPassword": "Conferma password",
+    "fullName": "Nome completo",
+    "forgotPassword": "Hai dimenticato la password?",
+    "noAccount": "Non hai un account?",
+    "hasAccount": "Hai già un account?",
+    "signIn": "Accedi",
+    "signUp": "Iscriviti",
+    "signingIn": "Accesso in corso...",
+    "signingUp": "Registrazione in corso...",
+    "invalidCredentials": "Indirizzo e-mail o password non validi",
+    "emailInUse": "Indirizzo e-mail già in uso",
+    "passwordMismatch": "Le password non corrispondono",
+    "error": "Si è verificato un errore. Riprova."
+  },
+  "common": {
+    "loading": "Caricamento in corso...",
+    "error": "Errore",
+    "success": "Successo",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "add": "Aggiungi",
+    "search": "Cerca",
+    "filter": "Filtro",
+    "sort": "Sort",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Successivo",
+    "previous": "Precedente",
+    "submit": "Invia",
+    "required": "Obbligatorio"
+  },
+  "_source": {
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About",
+      "news": "News",
+      "contact": "Contact",
+      "getQuote": "Get a Quote",
+      "login": "Login",
+      "myAccount": "My Account",
+      "logout": "Logout"
+    },
+    "home": {
+      "heroTitle": "The Gold Standard in Connector Prowess.",
+      "heroSubtitle": "Combining 50 years of Taiwanese manufacturing heritage with modern precision engineering. We connect the world's most demanding technologies.",
+      "viewCatalog": "View Catalog",
+      "ourStory": "Our Story",
+      "stats": {
+        "years": "50+",
+        "yearsLabel": "Years Experience",
+        "taiwan": "100%",
+        "taiwanLabel": "Made in Taiwan",
+        "iso": "ISO",
+        "isoLabel": "9001 Certified"
+      },
+      "featured": {
+        "title": "0.5mm Series",
+        "description": "Our flagship FPC/FFC connectors designed for high-density applications. Featuring robust locking mechanisms and superior conductivity.",
+        "link": "Explore Specs"
+      },
+      "industries": {
+        "title": "Industries Served",
+        "subtitle": "Powering the next generation of devices.",
+        "automotive": "Automotive",
+        "automotiveDesc": "In-vehicle infotainment and sensors.",
+        "industrial": "Industrial",
+        "industrialDesc": "Robotics and automation control.",
+        "consumer": "Consumer",
+        "consumerDesc": "Laptops, tablets, and wearables."
+      }
+    },
+    "about": {
+      "heroTitle": "Manufacturing Excellence Since 1975.",
+      "heroDescription": "Jaws Co., Ltd. is not just a distributor; we are a dedicated manufacturer based in Taipei, Taiwan. In an industry flooded with generic components, we stand apart by offering traceability, material purity, and custom design capabilities that others cannot match.",
+      "stats": {
+        "years": "50+",
+        "yearsLabel": "Years of Experience",
+        "taiwan": "100%",
+        "taiwanLabel": "Made in Taiwan",
+        "iso": "ISO",
+        "isoLabel": "9001:2015 Certified"
+      },
+      "timeline": {
+        "1975": {
+          "title": "Founded in Taipei, Taiwan.",
+          "description": "Started as a small mold-making workshop."
+        },
+        "1998": {
+          "title": "Expansion to FPC Connectors",
+          "description": "Launched the first generation of flexible circuit connectors."
+        },
+        "2010": {
+          "title": "ISO 9001 Certification",
+          "description": "Formalized our commitment to international quality standards."
+        },
+        "2026": {
+          "title": "The New Digital Era",
+          "description": "Launching our new digital platform to serve global engineers."
+        },
+        "title": "Our Journey"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Have questions about our products? Need technical support or want to discuss custom solutions? Our team is here to help.",
+      "headquarters": "Headquarters",
+      "address": "No. 8, Lane 2, Section 2, Example Road, Taipei City 110, Taiwan (R.O.C.)",
+      "email": "Email",
+      "phone": "Phone",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Your Name",
+        "email": "Email",
+        "emailPlaceholder": "company@email.com",
+        "inquiryType": "Inquiry Type",
+        "sample": "Product Sample Request",
+        "oem": "Custom OEM Design",
+        "technical": "Technical Support",
+        "message": "Message",
+        "messagePlaceholder": "Tell us about your project requirements...",
+        "submit": "Send Message",
+        "sending": "Sending..."
+      },
+      "success": {
+        "title": "Thank You!",
+        "message": "Your inquiry has been sent successfully. Our team will contact you within 24 hours.",
+        "reset": "Send Another Message"
+      },
+      "error": "An error occurred. Please try again."
+    },
+    "quote": {
+      "title": "Request a Quote",
+      "description": "Get competitive pricing on our precision connectors. Fill out the form below and our sales team will respond within 24 business hours.",
+      "steps": {
+        "submit": "Submit Request",
+        "submitDesc": "Provide your product requirements and quantities",
+        "receive": "Receive Quote",
+        "receiveDesc": "Our team will prepare competitive pricing within 24 hours",
+        "order": "Place Order",
+        "orderDesc": "Confirm your order and we'll begin production"
+      },
+      "form": {
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "John Smith",
+        "company": "Company",
+        "companyPlaceholder": "Your Company Name",
+        "email": "Email Address",
+        "emailPlaceholder": "john@company.com",
+        "phone": "Phone Number",
+        "phonePlaceholder": "+1 234 567 8900",
+        "productDetails": "Product / Part Numbers",
+        "productDetailsPlaceholder": "List the product names or part numbers you're interested in...",
+        "quantity": "Estimated Quantity",
+        "quantityPlaceholder": "e.g., 1,000 units or 5,000-10,000 units",
+        "additionalRequirements": "Additional Requirements",
+        "additionalRequirementsPlaceholder": "Any special requirements, certifications needed, delivery timeline, etc.",
+        "submit": "Request Quote",
+        "submitting": "Submitting..."
+      },
+      "success": {
+        "title": "Quote Request Received!",
+        "message": "Thank you for your interest. Our sales team will review your requirements and send you a detailed quote within 24 business hours.",
+        "reset": "Submit Another Request"
+      },
+      "required": "*"
+    },
+    "products": {
+      "title": "Product Catalog",
+      "description": "Explore our extensive range of FFC/FPC and Wire-to-Board connectors. Precision manufactured for reliability.",
+      "categories": "Categories",
+      "allProducts": "All Products",
+      "viewDetails": "View Details",
+      "error": "Error loading products. Please try again later.",
+      "empty": "No products found in this category.",
+      "categoryDescriptions": {
+        "fpc-ffc": {
+          "title": "FPC & FFC Connectors",
+          "description": "Flexible Printed Circuit connectors designed for high-density electronic packaging. Featuring Zero Insertion Force (ZIF) and Non-ZIF options."
+        },
+        "0-5mm": {
+          "title": "0.5mm Pitch Connectors",
+          "description": "Our most popular fine-pitch series. Ideal for compact devices requiring high reliability and signal integrity."
+        },
+        "1-0mm": {
+          "title": "1.0mm Pitch Connectors",
+          "description": "Robust standard pitch connectors. Perfect for automotive, industrial, and consumer electronics applications where durability is key."
+        },
+        "1-25mm": {
+          "title": "1.25mm Pitch Connectors",
+          "description": "Wide pitch connectors offering superior mechanical strength and easier manual assembly for larger devices."
+        },
+        "wire-to-board": {
+          "title": "Wire-to-Board Solutions",
+          "description": "Secure wire-to-board connections with positive locking mechanisms. Designed for high-vibration environments."
+        }
+      }
+    },
+    "productDetail": {
+      "breadcrumb": "Products",
+      "specifications": "Specifications",
+      "downloadSpec": "Download Spec Sheet (PDF)",
+      "requestQuote": "Request Quote",
+      "relatedProducts": "Related Products"
+    },
+    "news": {
+      "title": "News & Updates",
+      "description": "Stay informed about our latest products, company milestones, and industry insights.",
+      "comingSoon": "Coming Soon",
+      "comingSoonDesc": "We're working on exciting news to share with you. Check back soon!",
+      "error": "Error loading articles. Please try again later.",
+      "readMore": "Read Article"
+    },
+    "footer": {
+      "brand": "JAWS CO., LTD.",
+      "location": "Taipei, Taiwan",
+      "copyright": "Jaws Co., Ltd.",
+      "isoCertified": "ISO 9001 Certified"
+    },
+    "dashboard": {
+      "title": "My Dashboard",
+      "welcome": "Welcome back",
+      "overview": "Overview",
+      "favorites": "Favorites",
+      "favoritesDesc": "Products you've saved for quick access",
+      "inquiries": "My Inquiries",
+      "inquiriesDesc": "Track the status of your submitted inquiries",
+      "profile": "Profile",
+      "profileDesc": "Manage your account settings",
+      "stats": {
+        "favorites": "Favorites",
+        "inquiries": "Inquiries",
+        "pending": "Pending",
+        "reviewed": "Reviewed"
+      },
+      "empty": {
+        "favorites": "You haven't saved any products yet.",
+        "inquiries": "You haven't submitted any inquiries yet.",
+        "browseProducts": "Browse Products",
+        "requestQuote": "Request a Quote"
+      },
+      "status": {
+        "reviewed": "Reviewed",
+        "pending": "Pending Review"
+      },
+      "source": {
+        "quoteForm": "Quote Form",
+        "contactForm": "Contact Form"
+      },
+      "type": {
+        "rfq": "Quote Request",
+        "sample": "Sample Request",
+        "oem": "OEM Inquiry",
+        "technical": "Technical Support"
+      }
+    },
+    "admin": {
+      "sidebar": {
+        "dashboard": "Dashboard",
+        "products": "Products",
+        "categories": "Categories",
+        "inquiries": "Inquiries",
+        "news": "News"
+      },
+      "dashboard": {
+        "title": "Admin Dashboard",
+        "totalProducts": "Total Products",
+        "totalCategories": "Total Categories",
+        "totalInquiries": "Total Inquiries",
+        "unreadInquiries": "Unread Inquiries"
+      },
+      "products": {
+        "title": "Product Management",
+        "addNew": "Add Product",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete this product?",
+        "empty": "No products found."
+      },
+      "categories": {
+        "title": "Category Management",
+        "addNew": "Add Category",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete this category?",
+        "empty": "No categories found."
+      },
+      "inquiries": {
+        "title": "Customer Inquiries",
+        "markUnread": "Mark Unread",
+        "delete": "Delete",
+        "replyViaEmail": "Reply via Email",
+        "confirmDelete": "Are you sure you want to delete this inquiry?",
+        "empty": "No inquiries yet. Inquiries from the contact form will appear here."
+      },
+      "news": {
+        "title": "News Management",
+        "addNew": "Add Article",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete this article?",
+        "empty": "No articles found."
+      }
+    },
+    "auth": {
+      "login": "Login",
+      "register": "Register",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "fullName": "Full Name",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign In",
+      "signUp": "Sign Up",
+      "signingIn": "Signing in...",
+      "signingUp": "Signing up...",
+      "invalidCredentials": "Invalid email or password",
+      "emailInUse": "Email already in use",
+      "passwordMismatch": "Passwords do not match",
+      "error": "An error occurred. Please try again."
+    },
+    "common": {
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "add": "Add",
+      "search": "Search",
+      "filter": "Filter",
+      "sort": "Sort",
+      "close": "Close",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "required": "Required"
+    }
+  }
 }

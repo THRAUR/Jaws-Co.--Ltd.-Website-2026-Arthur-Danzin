@@ -1,3 +1,624 @@
 {
-  "_note": "Simplified Chinese - Run npm run translate to populate"
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "about": "关于",
+    "news": "新闻",
+    "contact": "联系",
+    "getQuote": "获取报价",
+    "login": "登录",
+    "myAccount": "我的账户",
+    "logout": "注销"
+  },
+  "home": {
+    "heroTitle": "连接器领域的黄金标准。",
+    "heroSubtitle": "融合台湾五十载制造传承与现代精密工程，我们连接全球最严苛的技术需求。",
+    "viewCatalog": "浏览目录",
+    "ourStory": "我们的故事",
+    "stats": {
+      "years": "50+",
+      "yearsLabel": "工作年限",
+      "taiwan": "100%",
+      "taiwanLabel": "台湾制造",
+      "iso": "国际标准化组织",
+      "isoLabel": "9001认证"
+    },
+    "featured": {
+      "title": "0.5毫米系列",
+      "description": "我们的旗舰FPC/FFC连接器专为高密度应用设计，具备坚固的锁定机制和卓越的导电性能。",
+      "link": "探索规格"
+    },
+    "industries": {
+      "title": "服务行业",
+      "subtitle": "为下一代设备提供动力。",
+      "automotive": "汽车",
+      "automotiveDesc": "车载信息娱乐系统与传感器。",
+      "industrial": "工业",
+      "industrialDesc": "机器人技术与自动化控制。",
+      "consumer": "消费者",
+      "consumerDesc": "笔记本电脑、平板电脑和可穿戴设备。"
+    }
+  },
+  "about": {
+    "heroTitle": "自1975年起，始终致力于制造卓越品质。",
+    "heroDescription": "鲨齿有限公司不仅是分销商，更是立足于台湾台北的专业制造商。在充斥着通用组件的行业中，我们凭借可追溯性、材料纯度及定制设计能力脱颖而出，这些优势是其他企业无法企及的。",
+    "stats": {
+      "years": "50+",
+      "yearsLabel": "多年经验",
+      "taiwan": "100%",
+      "taiwanLabel": "台湾制造",
+      "iso": "国际标准化组织",
+      "isoLabel": "ISO 9001:2015认证"
+    },
+    "timeline": {
+      "1975": {
+        "title": "创立于台湾台北。",
+        "description": "最初是一家小型模具制造作坊。"
+      },
+      "1998": {
+        "title": "扩展至柔性印刷电路板连接器",
+        "description": "推出第一代柔性电路连接器。"
+      },
+      "2010": {
+        "title": "ISO 9001认证",
+        "description": "我们正式承诺遵守国际质量标准。"
+      },
+      "2026": {
+        "title": "数字新时代",
+        "description": "推出全新数字平台，服务全球工程师。"
+      },
+      "title": "我们的旅程"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "对我们的产品有疑问？需要技术支持或想探讨定制解决方案？我们的团队随时为您提供帮助。",
+    "headquarters": "总部",
+    "address": "台北市例行路二段2巷8号，台湾（中华民国）110",
+    "email": "电子邮件",
+    "phone": "电话",
+    "form": {
+      "name": "名称",
+      "namePlaceholder": "你的名字",
+      "email": "电子邮件",
+      "emailPlaceholder": "company@email.com",
+      "inquiryType": "查询类型",
+      "sample": "产品样品申请",
+      "oem": "定制OEM设计",
+      "technical": "技术支持",
+      "message": "消息",
+      "messagePlaceholder": "请告诉我们您的项目需求...",
+      "submit": "发送消息",
+      "sending": "发送中..."
+    },
+    "success": {
+      "title": "谢谢！",
+      "message": "您的咨询已成功发送。我们的团队将在24小时内与您联系。",
+      "reset": "发送另一条消息"
+    },
+    "error": "发生错误。请重试。"
+  },
+  "quote": {
+    "title": "索取报价",
+    "description": "获取我们精密连接器的竞争性报价。填写下方表格，我们的销售团队将在24个工作小时内回复。",
+    "steps": {
+      "submit": "提交请求",
+      "submitDesc": "请提供您的产品需求及数量",
+      "receive": "获取报价",
+      "receiveDesc": "我们的团队将在24小时内提供具有竞争力的报价。",
+      "order": "下单",
+      "orderDesc": "请确认您的订单，我们将立即开始生产。"
+    },
+    "form": {
+      "fullName": "全名",
+      "fullNamePlaceholder": "约翰·史密斯",
+      "company": "公司",
+      "companyPlaceholder": "贵公司名称",
+      "email": "电子邮件地址",
+      "emailPlaceholder": "john@company.com",
+      "phone": "电话号码",
+      "phonePlaceholder": "+1 234 567 8900",
+      "productDetails": "产品/零件编号",
+      "productDetailsPlaceholder": "列出您感兴趣的产品名称或零件编号...",
+      "quantity": "预计数量",
+      "quantityPlaceholder": "例如：1,000个单位或5,000-10,000个单位",
+      "additionalRequirements": "附加要求",
+      "additionalRequirementsPlaceholder": "是否有特殊要求、所需认证、交付时间表等。",
+      "submit": "询价",
+      "submitting": "正在提交..."
+    },
+    "success": {
+      "title": "报价请求已收到！",
+      "message": "感谢您的关注。我们的销售团队将审核您的需求，并在24个工作小时内向您发送详细报价。",
+      "reset": "提交另一项请求"
+    },
+    "required": "*"
+  },
+  "products": {
+    "title": "产品目录",
+    "description": "探索我们丰富的FFC/FPC和线对板连接器产品线。精密制造，确保可靠性。",
+    "categories": "分类",
+    "allProducts": "所有产品",
+    "viewDetails": "查看详情",
+    "error": "加载产品时出错。请稍后重试。",
+    "empty": "此类别中未找到任何产品。",
+    "categoryDescriptions": {
+      "fpc-ffc": {
+        "title": "柔性印刷电路板（FPC）与柔性扁平电缆（FFC）连接器",
+        "description": "专为高密度电子封装设计的柔性印刷电路连接器。提供零插入力（ZIF）和非零插入力（非ZIF）两种选项。"
+      },
+      "0-5mm": {
+        "title": "0.5毫米间距连接器",
+        "description": "我们最受欢迎的细间距系列。专为需要高可靠性和信号完整性的紧凑型设备而设计。"
+      },
+      "1-0mm": {
+        "title": "1.0毫米间距连接器",
+        "description": "坚固耐用的标准间距连接器。专为汽车、工业及消费电子等对耐久性要求严苛的应用场景而设计。"
+      },
+      "1-25mm": {
+        "title": "1.25毫米间距连接器",
+        "description": "宽间距连接器提供卓越的机械强度，并为大型设备提供更便捷的手动组装体验。"
+      },
+      "wire-to-board": {
+        "title": "线对板解决方案",
+        "description": "采用正向锁定机制实现安全的线对板连接。专为高振动环境设计。"
+      }
+    }
+  },
+  "productDetail": {
+    "breadcrumb": "产品",
+    "specifications": "规格",
+    "downloadSpec": "下载规格表（PDF）",
+    "requestQuote": "询价",
+    "relatedProducts": "相关产品"
+  },
+  "news": {
+    "title": "新闻与动态",
+    "description": "随时了解我们最新的产品动态、公司里程碑及行业洞察。",
+    "comingSoon": "即将推出",
+    "comingSoonDesc": "我们正在筹备激动人心的消息与您分享。敬请期待！",
+    "error": "加载文章时出错。请稍后重试。",
+    "readMore": "阅读文章"
+  },
+  "footer": {
+    "brand": "JAWS有限公司",
+    "location": "台湾，台北",
+    "copyright": "鲨口有限公司",
+    "isoCertified": "ISO 9001 认证"
+  },
+  "dashboard": {
+    "title": "我的仪表盘",
+    "welcome": "欢迎回来",
+    "overview": "概述",
+    "favorites": "收藏夹",
+    "favoritesDesc": "您已收藏以便快速访问的产品",
+    "inquiries": "我的咨询",
+    "inquiriesDesc": "追踪您提交的咨询状态",
+    "profile": "个人资料",
+    "profileDesc": "管理您的账户设置",
+    "stats": {
+      "favorites": "收藏夹",
+      "inquiries": "咨询",
+      "pending": "待定",
+      "reviewed": "已审阅"
+    },
+    "empty": {
+      "favorites": "您尚未保存任何商品。",
+      "inquiries": "您尚未提交任何咨询。",
+      "browseProducts": "浏览产品",
+      "requestQuote": "索取报价"
+    },
+    "status": {
+      "reviewed": "已审阅",
+      "pending": "待审核"
+    },
+    "source": {
+      "quoteForm": "报价单",
+      "contactForm": "联系表格"
+    },
+    "type": {
+      "rfq": "询价请求",
+      "sample": "样品申请",
+      "oem": "OEM询价",
+      "technical": "技术支持"
+    }
+  },
+  "admin": {
+    "sidebar": {
+      "dashboard": "仪表盘",
+      "products": "产品",
+      "categories": "分类",
+      "inquiries": "咨询",
+      "news": "新闻"
+    },
+    "dashboard": {
+      "title": "管理员仪表盘",
+      "totalProducts": "总产品数",
+      "totalCategories": "总分类",
+      "totalInquiries": "总咨询量",
+      "unreadInquiries": "未读咨询"
+    },
+    "products": {
+      "title": "产品管理",
+      "addNew": "添加产品",
+      "edit": "编辑",
+      "delete": "删除",
+      "confirmDelete": "您确定要删除此产品吗？",
+      "empty": "未找到任何产品。"
+    },
+    "categories": {
+      "title": "品类管理",
+      "addNew": "添加分类",
+      "edit": "编辑",
+      "delete": "删除",
+      "confirmDelete": "您确定要删除此类别吗？",
+      "empty": "未找到任何分类。"
+    },
+    "inquiries": {
+      "title": "客户咨询",
+      "markUnread": "标记为未读",
+      "delete": "删除",
+      "replyViaEmail": "通过电子邮件回复",
+      "confirmDelete": "您确定要删除此查询吗？",
+      "empty": "目前尚无咨询。通过联系表单提交的咨询将显示在此处。"
+    },
+    "news": {
+      "title": "新闻管理",
+      "addNew": "添加文章",
+      "edit": "编辑",
+      "delete": "删除",
+      "confirmDelete": "您确定要删除这篇文章吗？",
+      "empty": "未找到任何文章。"
+    }
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "email": "电子邮件",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "fullName": "全名",
+    "forgotPassword": "忘记密码？",
+    "noAccount": "还没有账户？",
+    "hasAccount": "已有账户？",
+    "signIn": "登录",
+    "signUp": "注册",
+    "signingIn": "登录中...",
+    "signingUp": "正在注册...",
+    "invalidCredentials": "电子邮件或密码无效",
+    "emailInUse": "该邮箱已被使用",
+    "passwordMismatch": "密码不匹配",
+    "error": "发生错误。请重试。"
+  },
+  "common": {
+    "loading": "正在加载...",
+    "error": "错误",
+    "success": "成功",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "search": "搜索",
+    "filter": "过滤器",
+    "sort": "命运",
+    "close": "关闭",
+    "back": "返回",
+    "next": "接下来",
+    "previous": "先前",
+    "submit": "提交",
+    "required": "必填"
+  },
+  "_source": {
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About",
+      "news": "News",
+      "contact": "Contact",
+      "getQuote": "Get a Quote",
+      "login": "Login",
+      "myAccount": "My Account",
+      "logout": "Logout"
+    },
+    "home": {
+      "heroTitle": "The Gold Standard in Connector Prowess.",
+      "heroSubtitle": "Combining 50 years of Taiwanese manufacturing heritage with modern precision engineering. We connect the world's most demanding technologies.",
+      "viewCatalog": "View Catalog",
+      "ourStory": "Our Story",
+      "stats": {
+        "years": "50+",
+        "yearsLabel": "Years Experience",
+        "taiwan": "100%",
+        "taiwanLabel": "Made in Taiwan",
+        "iso": "ISO",
+        "isoLabel": "9001 Certified"
+      },
+      "featured": {
+        "title": "0.5mm Series",
+        "description": "Our flagship FPC/FFC connectors designed for high-density applications. Featuring robust locking mechanisms and superior conductivity.",
+        "link": "Explore Specs"
+      },
+      "industries": {
+        "title": "Industries Served",
+        "subtitle": "Powering the next generation of devices.",
+        "automotive": "Automotive",
+        "automotiveDesc": "In-vehicle infotainment and sensors.",
+        "industrial": "Industrial",
+        "industrialDesc": "Robotics and automation control.",
+        "consumer": "Consumer",
+        "consumerDesc": "Laptops, tablets, and wearables."
+      }
+    },
+    "about": {
+      "heroTitle": "Manufacturing Excellence Since 1975.",
+      "heroDescription": "Jaws Co., Ltd. is not just a distributor; we are a dedicated manufacturer based in Taipei, Taiwan. In an industry flooded with generic components, we stand apart by offering traceability, material purity, and custom design capabilities that others cannot match.",
+      "stats": {
+        "years": "50+",
+        "yearsLabel": "Years of Experience",
+        "taiwan": "100%",
+        "taiwanLabel": "Made in Taiwan",
+        "iso": "ISO",
+        "isoLabel": "9001:2015 Certified"
+      },
+      "timeline": {
+        "1975": {
+          "title": "Founded in Taipei, Taiwan.",
+          "description": "Started as a small mold-making workshop."
+        },
+        "1998": {
+          "title": "Expansion to FPC Connectors",
+          "description": "Launched the first generation of flexible circuit connectors."
+        },
+        "2010": {
+          "title": "ISO 9001 Certification",
+          "description": "Formalized our commitment to international quality standards."
+        },
+        "2026": {
+          "title": "The New Digital Era",
+          "description": "Launching our new digital platform to serve global engineers."
+        },
+        "title": "Our Journey"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Have questions about our products? Need technical support or want to discuss custom solutions? Our team is here to help.",
+      "headquarters": "Headquarters",
+      "address": "No. 8, Lane 2, Section 2, Example Road, Taipei City 110, Taiwan (R.O.C.)",
+      "email": "Email",
+      "phone": "Phone",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Your Name",
+        "email": "Email",
+        "emailPlaceholder": "company@email.com",
+        "inquiryType": "Inquiry Type",
+        "sample": "Product Sample Request",
+        "oem": "Custom OEM Design",
+        "technical": "Technical Support",
+        "message": "Message",
+        "messagePlaceholder": "Tell us about your project requirements...",
+        "submit": "Send Message",
+        "sending": "Sending..."
+      },
+      "success": {
+        "title": "Thank You!",
+        "message": "Your inquiry has been sent successfully. Our team will contact you within 24 hours.",
+        "reset": "Send Another Message"
+      },
+      "error": "An error occurred. Please try again."
+    },
+    "quote": {
+      "title": "Request a Quote",
+      "description": "Get competitive pricing on our precision connectors. Fill out the form below and our sales team will respond within 24 business hours.",
+      "steps": {
+        "submit": "Submit Request",
+        "submitDesc": "Provide your product requirements and quantities",
+        "receive": "Receive Quote",
+        "receiveDesc": "Our team will prepare competitive pricing within 24 hours",
+        "order": "Place Order",
+        "orderDesc": "Confirm your order and we'll begin production"
+      },
+      "form": {
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "John Smith",
+        "company": "Company",
+        "companyPlaceholder": "Your Company Name",
+        "email": "Email Address",
+        "emailPlaceholder": "john@company.com",
+        "phone": "Phone Number",
+        "phonePlaceholder": "+1 234 567 8900",
+        "productDetails": "Product / Part Numbers",
+        "productDetailsPlaceholder": "List the product names or part numbers you're interested in...",
+        "quantity": "Estimated Quantity",
+        "quantityPlaceholder": "e.g., 1,000 units or 5,000-10,000 units",
+        "additionalRequirements": "Additional Requirements",
+        "additionalRequirementsPlaceholder": "Any special requirements, certifications needed, delivery timeline, etc.",
+        "submit": "Request Quote",
+        "submitting": "Submitting..."
+      },
+      "success": {
+        "title": "Quote Request Received!",
+        "message": "Thank you for your interest. Our sales team will review your requirements and send you a detailed quote within 24 business hours.",
+        "reset": "Submit Another Request"
+      },
+      "required": "*"
+    },
+    "products": {
+      "title": "Product Catalog",
+      "description": "Explore our extensive range of FFC/FPC and Wire-to-Board connectors. Precision manufactured for reliability.",
+      "categories": "Categories",
+      "allProducts": "All Products",
+      "viewDetails": "View Details",
+      "error": "Error loading products. Please try again later.",
+      "empty": "No products found in this category.",
+      "categoryDescriptions": {
+        "fpc-ffc": {
+          "title": "FPC & FFC Connectors",
+          "description": "Flexible Printed Circuit connectors designed for high-density electronic packaging. Featuring Zero Insertion Force (ZIF) and Non-ZIF options."
+        },
+        "0-5mm": {
+          "title": "0.5mm Pitch Connectors",
+          "description": "Our most popular fine-pitch series. Ideal for compact devices requiring high reliability and signal integrity."
+        },
+        "1-0mm": {
+          "title": "1.0mm Pitch Connectors",
+          "description": "Robust standard pitch connectors. Perfect for automotive, industrial, and consumer electronics applications where durability is key."
+        },
+        "1-25mm": {
+          "title": "1.25mm Pitch Connectors",
+          "description": "Wide pitch connectors offering superior mechanical strength and easier manual assembly for larger devices."
+        },
+        "wire-to-board": {
+          "title": "Wire-to-Board Solutions",
+          "description": "Secure wire-to-board connections with positive locking mechanisms. Designed for high-vibration environments."
+        }
+      }
+    },
+    "productDetail": {
+      "breadcrumb": "Products",
+      "specifications": "Specifications",
+      "downloadSpec": "Download Spec Sheet (PDF)",
+      "requestQuote": "Request Quote",
+      "relatedProducts": "Related Products"
+    },
+    "news": {
+      "title": "News & Updates",
+      "description": "Stay informed about our latest products, company milestones, and industry insights.",
+      "comingSoon": "Coming Soon",
+      "comingSoonDesc": "We're working on exciting news to share with you. Check back soon!",
+      "error": "Error loading articles. Please try again later.",
+      "readMore": "Read Article"
+    },
+    "footer": {
+      "brand": "JAWS CO., LTD.",
+      "location": "Taipei, Taiwan",
+      "copyright": "Jaws Co., Ltd.",
+      "isoCertified": "ISO 9001 Certified"
+    },
+    "dashboard": {
+      "title": "My Dashboard",
+      "welcome": "Welcome back",
+      "overview": "Overview",
+      "favorites": "Favorites",
+      "favoritesDesc": "Products you've saved for quick access",
+      "inquiries": "My Inquiries",
+      "inquiriesDesc": "Track the status of your submitted inquiries",
+      "profile": "Profile",
+      "profileDesc": "Manage your account settings",
+      "stats": {
+        "favorites": "Favorites",
+        "inquiries": "Inquiries",
+        "pending": "Pending",
+        "reviewed": "Reviewed"
+      },
+      "empty": {
+        "favorites": "You haven't saved any products yet.",
+        "inquiries": "You haven't submitted any inquiries yet.",
+        "browseProducts": "Browse Products",
+        "requestQuote": "Request a Quote"
+      },
+      "status": {
+        "reviewed": "Reviewed",
+        "pending": "Pending Review"
+      },
+      "source": {
+        "quoteForm": "Quote Form",
+        "contactForm": "Contact Form"
+      },
+      "type": {
+        "rfq": "Quote Request",
+        "sample": "Sample Request",
+        "oem": "OEM Inquiry",
+        "technical": "Technical Support"
+      }
+    },
+    "admin": {
+      "sidebar": {
+        "dashboard": "Dashboard",
+        "products": "Products",
+        "categories": "Categories",
+        "inquiries": "Inquiries",
+        "news": "News"
+      },
+      "dashboard": {
+        "title": "Admin Dashboard",
+        "totalProducts": "Total Products",
+        "totalCategories": "Total Categories",
+        "totalInquiries": "Total Inquiries",
+        "unreadInquiries": "Unread Inquiries"
+      },
+      "products": {
+        "title": "Product Management",
+        "addNew": "Add Product",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete this product?",
+        "empty": "No products found."
+      },
+      "categories": {
+        "title": "Category Management",
+        "addNew": "Add Category",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete this category?",
+        "empty": "No categories found."
+      },
+      "inquiries": {
+        "title": "Customer Inquiries",
+        "markUnread": "Mark Unread",
+        "delete": "Delete",
+        "replyViaEmail": "Reply via Email",
+        "confirmDelete": "Are you sure you want to delete this inquiry?",
+        "empty": "No inquiries yet. Inquiries from the contact form will appear here."
+      },
+      "news": {
+        "title": "News Management",
+        "addNew": "Add Article",
+        "edit": "Edit",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete this article?",
+        "empty": "No articles found."
+      }
+    },
+    "auth": {
+      "login": "Login",
+      "register": "Register",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "fullName": "Full Name",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign In",
+      "signUp": "Sign Up",
+      "signingIn": "Signing in...",
+      "signingUp": "Signing up...",
+      "invalidCredentials": "Invalid email or password",
+      "emailInUse": "Email already in use",
+      "passwordMismatch": "Passwords do not match",
+      "error": "An error occurred. Please try again."
+    },
+    "common": {
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "add": "Add",
+      "search": "Search",
+      "filter": "Filter",
+      "sort": "Sort",
+      "close": "Close",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit",
+      "required": "Required"
+    }
+  }
 }
