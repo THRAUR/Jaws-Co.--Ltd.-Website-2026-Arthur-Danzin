@@ -21,6 +21,13 @@ const typeLabels: Record<string, string> = {
   technical: 'Support',
 };
 
+const getFormSource = (inquiryType: string): { label: string; color: string } => {
+  if (inquiryType === 'rfq') {
+    return { label: 'Quote Form', color: '#C5A059' }; // gold
+  }
+  return { label: 'Contact Form', color: '#2563eb' }; // blue
+};
+
 export function InquiryList({ initialInquiries }: InquiryListProps) {
   const router = useRouter();
   const [inquiries, setInquiries] = useState(initialInquiries);
@@ -114,6 +121,19 @@ export function InquiryList({ initialInquiries }: InquiryListProps) {
                   minute: '2-digit',
                 })}
               </div>
+              <span
+                style={{
+                  background: getFormSource(inquiry.inquiry_type).color,
+                  color: 'white',
+                  padding: '4px 8px',
+                  borderRadius: '4px',
+                  fontSize: '0.7rem',
+                  fontWeight: 600,
+                  marginRight: '6px',
+                }}
+              >
+                {getFormSource(inquiry.inquiry_type).label}
+              </span>
               <span className={`${styles.typeBadge} ${styles[inquiry.inquiry_type]}`}>
                 {typeLabels[inquiry.inquiry_type] || inquiry.inquiry_type}
               </span>

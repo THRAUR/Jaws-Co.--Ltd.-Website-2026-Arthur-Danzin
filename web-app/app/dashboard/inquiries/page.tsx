@@ -32,6 +32,13 @@ export default async function InquiriesPage() {
     return labels[type] || type;
   };
 
+  const getFormSource = (inquiryType: string): { label: string; color: string } => {
+    if (inquiryType === 'rfq') {
+      return { label: 'Quote Form', color: '#C5A059' }; // gold
+    }
+    return { label: 'Contact Form', color: '#2563eb' }; // blue
+  };
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -44,6 +51,7 @@ export default async function InquiriesPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid #f0f0f0' }}>
+                <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600 }}>Source</th>
                 <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600 }}>Type</th>
                 <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600 }}>Message</th>
                 <th style={{ padding: '1rem', textAlign: 'left', fontWeight: 600 }}>Date</th>
@@ -53,6 +61,20 @@ export default async function InquiriesPage() {
             <tbody>
               {inquiries.map((inquiry) => (
                 <tr key={inquiry.id} style={{ borderBottom: '1px solid #f0f0f0' }}>
+                  <td style={{ padding: '1rem' }}>
+                    <span
+                      style={{
+                        background: getFormSource(inquiry.inquiry_type).color,
+                        color: 'white',
+                        padding: '4px 10px',
+                        borderRadius: '4px',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                      }}
+                    >
+                      {getFormSource(inquiry.inquiry_type).label}
+                    </span>
+                  </td>
                   <td style={{ padding: '1rem' }}>
                     <span
                       style={{
