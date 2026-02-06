@@ -124,3 +124,28 @@
     background: var(--black) !important;
     color: white !important;
 }
+
+/* Error Message */
+.errorMessage {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+/* Disabled button state */
+.formCol button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Focus states */
+.formCol input:focus,
+.formCol textarea:focus,
+.formCol select:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: white;
+}

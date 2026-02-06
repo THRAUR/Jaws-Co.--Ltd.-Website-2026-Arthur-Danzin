@@ -16,6 +16,7 @@ export default function Navbar() {
                 <Link href="/" className={isActive('/')}>Home</Link>
                 <Link href="/products" className={isActive('/products')}>Products</Link>
                 <Link href="/about" className={isActive('/about')}>About</Link>
+                <Link href="/news" className={isActive('/news')}>News</Link>
                 <Link href="/contact" className={isActive('/contact')}>Contact</Link>
             </div>
             <Link href="/contact" className={styles.cta}>Get a Quote</Link>

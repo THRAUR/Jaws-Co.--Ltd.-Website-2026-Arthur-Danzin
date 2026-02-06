@@ -151,3 +151,45 @@
     background: var(--black);
     color: white;
 }
+
+/* Product Image */
+.productImage {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+}
+
+.productImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.productCard:hover .productImage img {
+    transform: scale(1.05);
+}
+
+/* Category Tag */
+.categoryTag {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: rgba(197, 160, 89, 0.15);
+    color: #8b6914;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Empty/Error states */
+.empty,
+.error {
+    grid-column: 1 / -1;
+    padding: 60px 20px;
+    text-align: center;
+    color: #666;
+    background: var(--off-white);
+    border-radius: 8px;
+}
