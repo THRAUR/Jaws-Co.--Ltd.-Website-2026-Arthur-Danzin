@@ -4,7 +4,7 @@
  * News Form Component
  * Reusable form for creating and editing news articles
  */
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import type { NewsArticle } from '@/types/database';
@@ -14,6 +14,9 @@ import styles from '../components/AdminForm.module.css';
 interface NewsFormProps {
   article?: NewsArticle;
 }
+
+const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
+const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml'];
 
 function slugify(text: string): string {
   return text
@@ -27,6 +30,7 @@ function slugify(text: string): string {
 export function NewsForm({ article }: NewsFormProps) {
   const router = useRouter();
   const isEditing = !!article;
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [title, setTitle] = useState(article?.title || '');
   const [slug, setSlug] = useState(article?.slug || '');
@@ -36,12 +40,92 @@ export function NewsForm({ article }: NewsFormProps) {
   const [isPublished, setIsPublished] = useState(article?.is_published || false);
 
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [dragActive, setDragActive] = useState(false);
 
   const handleTitleChange = (value: string) => {
     setTitle(value);
     if (!isEditing || slug === slugify(article?.title || '')) {
       setSlug(slugify(value));
+    }
+  };
+
+  const validateFile = (file: File): string | null => {
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      return 'Invalid file type. Only images are allowed (JPEG, PNG, GIF, WebP, SVG)';
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      return 'File too large. Maximum size is 50MB';
+    }
+    return null;
+  };
+
+  const uploadFile = async (file: File) => {
+    const validationError = validateFile(file);
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+
+    setUploading(true);
+    setError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Upload failed');
+      }
+
+      setCoverImageUrl(data.url);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to upload image');
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      uploadFile(file);
+    }
+  };
+
+  const handleDrag = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === 'dragenter' || e.type === 'dragover') {
+      setDragActive(true);
+    } else if (e.type === 'dragleave') {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+
+    const file = e.dataTransfer.files?.[0];
+    if (file) {
+      uploadFile(file);
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setCoverImageUrl('');
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
     }
   };
 
@@ -138,20 +222,49 @@ export function NewsForm({ article }: NewsFormProps) {
       </div>
 
       <div className={styles.field}>
-        <label htmlFor="coverImage" className={styles.label}>
-          Cover Image URL
-        </label>
-        <input
-          id="coverImage"
-          type="url"
-          value={coverImageUrl}
-          onChange={(e) => setCoverImageUrl(e.target.value)}
-          className={styles.input}
-          placeholder="https://example.com/image.jpg"
-        />
-        {coverImageUrl && (
+        <label className={styles.label}>Cover Image</label>
+        {coverImageUrl ? (
           <div className={styles.preview}>
             <img src={coverImageUrl} alt="Cover preview" className={styles.previewImage} />
+            <button
+              type="button"
+              onClick={handleRemoveImage}
+              className={styles.removeBtn}
+              style={{ marginTop: '0.5rem' }}
+            >
+              Remove Image
+            </button>
+          </div>
+        ) : (
+          <div
+            className={`${styles.fileUpload} ${dragActive ? styles.fileUploadActive : ''}`}
+            onDragEnter={handleDrag}
+            onDragLeave={handleDrag}
+            onDragOver={handleDrag}
+            onDrop={handleDrop}
+            onClick={() => fileInputRef.current?.click()}
+            style={dragActive ? { borderColor: 'var(--gold)', backgroundColor: 'rgba(197, 160, 89, 0.05)' } : {}}
+          >
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/jpeg,image/png,image/gif,image/webp,image/svg+xml"
+              onChange={handleFileChange}
+              disabled={uploading}
+            />
+            <p className={styles.fileUploadText}>
+              {uploading ? (
+                'Uploading...'
+              ) : (
+                <>
+                  <strong>Click to upload</strong> or drag and drop
+                  <br />
+                  <span style={{ fontSize: '0.85rem', opacity: 0.7 }}>
+                    JPEG, PNG, GIF, WebP, SVG (max 50MB)
+                  </span>
+                </>
+              )}
+            </p>
           </div>
         )}
       </div>
@@ -190,7 +303,7 @@ export function NewsForm({ article }: NewsFormProps) {
       </div>
 
       <div className={styles.actions}>
-        <button type="submit" className={styles.submitBtn} disabled={loading}>
+        <button type="submit" className={styles.submitBtn} disabled={loading || uploading}>
           {loading
             ? 'Saving...'
             : isEditing

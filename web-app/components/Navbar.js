@@ -19,7 +19,7 @@ export default function Navbar() {
                 <Link href="/news" className={isActive('/news')}>News</Link>
                 <Link href="/contact" className={isActive('/contact')}>Contact</Link>
             </div>
-            <Link href="/contact" className={styles.cta}>Get a Quote</Link>
+            <Link href="/quote" className={styles.cta}>Get a Quote</Link>
         </nav>
     );
 }

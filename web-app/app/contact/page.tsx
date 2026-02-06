@@ -7,7 +7,7 @@
 import { useState } from 'react';
 import styles from './page.module.css';
 
-type InquiryType = 'rfq' | 'sample' | 'oem' | 'technical';
+type InquiryType = 'sample' | 'oem' | 'technical';
 
 interface FormData {
   name: string;
@@ -17,9 +17,8 @@ interface FormData {
 }
 
 const inquiryTypeLabels: Record<InquiryType, string> = {
-  rfq: 'Request for Quote',
-  sample: 'Product Sample',
-  oem: 'Custom OEM',
+  sample: 'Product Sample Request',
+  oem: 'Custom OEM Design',
   technical: 'Technical Support',
 };
 
@@ -27,7 +26,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
-    inquiry_type: 'rfq',
+    inquiry_type: 'technical',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -74,7 +73,7 @@ export default function ContactPage() {
     setFormData({
       name: '',
       email: '',
-      inquiry_type: 'rfq',
+      inquiry_type: 'technical',
       message: '',
     });
   };
@@ -82,10 +81,10 @@ export default function ContactPage() {
   return (
     <div className={styles.container}>
       <div className={styles.infoCol}>
-        <h1>Start a Project</h1>
+        <h1>Contact Us</h1>
         <p>
-          Our engineering team is ready to assist with your connector requirements.
-          Reach out for quotes, samples, or custom design consultations.
+          Have questions about our products? Need technical support or want to discuss
+          custom solutions? Our team is here to help.
         </p>
 
         <div className={styles.contactDetail}>
