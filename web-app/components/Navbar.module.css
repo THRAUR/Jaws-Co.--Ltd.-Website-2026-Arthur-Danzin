@@ -53,6 +53,45 @@
     width: 100%;
 }
 
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.loginLink {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.loginLink:hover {
+    color: var(--gold);
+}
+
+.userMenu {
+    display: flex;
+    align-items: center;
+}
+
+.dashboardLink {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    background: rgba(197, 160, 89, 0.15);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.dashboardLink:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
 .cta {
     background: var(--black);
     color: var(--white);

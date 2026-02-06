@@ -16,12 +16,14 @@ interface LayoutWrapperProps {
 export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   const pathname = usePathname();
   const isAdminRoute = pathname?.startsWith('/admin');
+  const isDashboardRoute = pathname?.startsWith('/dashboard');
+  const hideNavFooter = isAdminRoute || isDashboardRoute;
 
   return (
     <>
-      {!isAdminRoute && <Navbar />}
+      {!hideNavFooter && <Navbar />}
       {children}
-      {!isAdminRoute && <Footer />}
+      {!hideNavFooter && <Footer />}
     </>
   );
 }

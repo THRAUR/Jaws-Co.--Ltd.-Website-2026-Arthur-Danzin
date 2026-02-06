@@ -89,6 +89,72 @@ export interface InquiryInput {
 }
 
 /**
+ * User Profile types
+ */
+export interface UserProfile {
+  id: string;
+  email: string;
+  full_name: string;
+  company_name: string | null;
+  job_title: string | null;
+  phone: string | null;
+  country: string | null;
+  role: 'admin' | 'client';
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Favorite {
+  id: string;
+  user_id: string;
+  product_id: string;
+  created_at: string;
+}
+
+export interface FavoriteWithProduct extends Favorite {
+  product: Product;
+}
+
+export interface Order {
+  id: string;
+  user_id: string;
+  order_number: string;
+  status: 'pending' | 'confirmed' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
+  items: OrderItem[];
+  total_amount: number | null;
+  currency: string;
+  shipping_address: ShippingAddress | null;
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface OrderItem {
+  product_id: string;
+  product_name: string;
+  quantity: number;
+  unit_price?: number;
+}
+
+export interface ShippingAddress {
+  street: string;
+  city: string;
+  state: string;
+  postal_code: string;
+  country: string;
+}
+
+export interface RegisterInput {
+  email: string;
+  password: string;
+  full_name: string;
+  company_name?: string;
+  job_title?: string;
+  phone?: string;
+  country?: string;
+}
+
+/**
  * Supabase Database type definition
  * Required format for typed Supabase client
  */

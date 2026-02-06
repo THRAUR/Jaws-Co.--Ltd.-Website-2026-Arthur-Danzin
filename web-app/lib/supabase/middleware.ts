@@ -44,10 +44,39 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  const pathname = request.nextUrl.pathname;
+
+  // Redirect logged-in users from auth pages
+  if (pathname === '/login' || pathname === '/register') {
+    if (user) {
+      // Check role and redirect appropriately
+      const { data: profile } = await supabase
+        .from('user_profiles')
+        .select('role')
+        .eq('id', user.id)
+        .single();
+
+      const url = request.nextUrl.clone();
+      url.pathname = profile?.role === 'admin' ? '/admin' : '/dashboard';
+      return NextResponse.redirect(url);
+    }
+    return supabaseResponse;
+  }
+
+  // Protect dashboard routes
+  if (pathname.startsWith('/dashboard')) {
+    if (!user) {
+      const url = request.nextUrl.clone();
+      url.pathname = '/login';
+      return NextResponse.redirect(url);
+    }
+    return supabaseResponse;
+  }
+
   // Protect admin routes
-  if (request.nextUrl.pathname.startsWith('/admin')) {
+  if (pathname.startsWith('/admin')) {
     // Allow access to login page
-    if (request.nextUrl.pathname === '/admin/login') {
+    if (pathname === '/admin/login') {
       // If already logged in, redirect to dashboard
       if (user) {
         const url = request.nextUrl.clone();

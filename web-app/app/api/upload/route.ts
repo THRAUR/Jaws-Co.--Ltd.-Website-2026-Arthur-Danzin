@@ -48,9 +48,9 @@ export async function POST(request: Request) {
     const arrayBuffer = await file.arrayBuffer();
     const buffer = new Uint8Array(arrayBuffer);
 
-    // Upload to Supabase Storage
+    // Upload to Supabase Storage (bucket name is 'image')
     const { data, error } = await supabase.storage
-      .from('images')
+      .from('image')
       .upload(filePath, buffer, {
         contentType: file.type,
         upsert: false,
@@ -59,14 +59,14 @@ export async function POST(request: Request) {
     if (error) {
       console.error('Supabase storage error:', error);
       return NextResponse.json(
-        { error: 'Failed to upload image. Please try again.' },
+        { error: `Failed to upload image: ${error.message}` },
         { status: 500 }
       );
     }
 
     // Get public URL
     const { data: urlData } = supabase.storage
-      .from('images')
+      .from('image')
       .getPublicUrl(filePath);
 
     return NextResponse.json({

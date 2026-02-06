@@ -1,0 +1,205 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.brand {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 1.4rem;
+  color: white;
+  margin: 0;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.userCard {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 1rem;
+  border-radius: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companyName {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav {
+  flex: 1;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.navItem:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navItem.active {
+  color: var(--gold);
+  background: rgba(197, 160, 89, 0.1);
+  border-left: 3px solid var(--gold);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.navItem.active .icon {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newInquiry {
+  padding: 12px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.newInquiry:hover {
+  background: #d4af61;
+  transform: translateY(-1px);
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: rgba(215, 38, 56, 0.8);
+  border-color: transparent;
+}
+
+.viewSite {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s;
+}
+
+.viewSite:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .brand {
+    border-bottom: none;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .userCard,
+  .nav,
+  .footer {
+    display: none;
+  }
+}
