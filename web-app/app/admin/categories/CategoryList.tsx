@@ -7,6 +7,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { useTranslation } from '@/lib/i18n/context';
 import type { Category } from '@/types/database';
 import styles from './page.module.css';
 
@@ -29,6 +30,7 @@ function slugify(text: string): string {
 
 export function CategoryList({ initialCategories }: CategoryListProps) {
   const router = useRouter();
+  const t = useTranslation();
   const [categories, setCategories] = useState(initialCategories);
   const [newName, setNewName] = useState('');
   const [newDescription, setNewDescription] = useState('');
@@ -99,11 +101,11 @@ export function CategoryList({ initialCategories }: CategoryListProps) {
 
   const handleDelete = async (id: string, productCount: number) => {
     if (productCount > 0) {
-      alert(`Cannot delete category with ${productCount} products. Remove or reassign products first.`);
+      alert(t('admin.categories.cannotDelete'));
       return;
     }
 
-    if (!confirm('Are you sure you want to delete this category?')) return;
+    if (!confirm(t('admin.categories.confirmDelete'))) return;
 
     const supabase = createClient();
     const { error } = await supabase.from('categories').delete().eq('id', id);
@@ -123,7 +125,7 @@ export function CategoryList({ initialCategories }: CategoryListProps) {
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
           className={styles.input}
-          placeholder="Category name"
+          placeholder={t('admin.categories.namePlaceholder')}
           required
         />
         <input
@@ -131,16 +133,16 @@ export function CategoryList({ initialCategories }: CategoryListProps) {
           value={newDescription}
           onChange={(e) => setNewDescription(e.target.value)}
           className={styles.input}
-          placeholder="Description (optional)"
+          placeholder={t('admin.categories.descriptionPlaceholder')}
         />
         <button type="submit" className={styles.addBtn} disabled={loading}>
-          {loading ? 'Adding...' : 'Add Category'}
+          {loading ? t('admin.categories.adding') : t('admin.categories.addNew')}
         </button>
       </form>
 
       {categories.length === 0 ? (
         <div className={styles.empty}>
-          No categories yet. Add your first category above.
+          {t('admin.categories.empty')}
         </div>
       ) : (
         <ul className={styles.list}>
@@ -169,13 +171,13 @@ export function CategoryList({ initialCategories }: CategoryListProps) {
                       onClick={() => handleSaveEdit(category.id)}
                       className={styles.saveBtn}
                     >
-                      Save
+                      {t('admin.categories.save')}
                     </button>
                     <button
                       onClick={() => setEditingId(null)}
                       className={styles.cancelBtn}
                     >
-                      Cancel
+                      {t('admin.categories.cancel')}
                     </button>
                   </div>
                 </>
@@ -189,20 +191,20 @@ export function CategoryList({ initialCategories }: CategoryListProps) {
                     </div>
                   </div>
                   <span className={styles.itemCount}>
-                    {category.product_count} product{category.product_count !== 1 ? 's' : ''}
+                    {category.product_count} {category.product_count !== 1 ? t('admin.categories.productsCount') : t('admin.categories.productCount')}
                   </span>
                   <div className={styles.itemActions}>
                     <button
                       onClick={() => handleEdit(category)}
                       className={styles.editBtn}
                     >
-                      Edit
+                      {t('admin.categories.edit')}
                     </button>
                     <button
                       onClick={() => handleDelete(category.id, category.product_count)}
                       className={styles.deleteBtn}
                     >
-                      Delete
+                      {t('admin.categories.delete')}
                     </button>
                   </div>
                 </>

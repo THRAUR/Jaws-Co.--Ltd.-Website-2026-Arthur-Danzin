@@ -4,6 +4,7 @@
  */
 import { createClient } from '@/lib/supabase/server';
 import { InquiryList } from './InquiryList';
+import { InquiriesHeader } from './InquiriesHeader';
 import styles from './page.module.css';
 
 export default async function AdminInquiries() {
@@ -19,20 +20,7 @@ export default async function AdminInquiries() {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <div>
-          <h1 className={styles.title}>Inquiries</h1>
-          <p className={styles.subtitle}>
-            {unreadCount > 0 ? (
-              <>
-                <span className={styles.unreadBadge}>{unreadCount} new</span> inquiry{unreadCount !== 1 ? 'ies' : 'y'}
-              </>
-            ) : (
-              'Customer messages and requests'
-            )}
-          </p>
-        </div>
-      </header>
+      <InquiriesHeader unreadCount={unreadCount} />
 
       {error ? (
         <div className={styles.error}>Error loading inquiries: {error.message}</div>

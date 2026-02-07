@@ -7,11 +7,13 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { useTranslation } from '@/lib/i18n/context';
 import Link from 'next/link';
 import styles from '../auth.module.css';
 
 export default function LoginPage() {
   const router = useRouter();
+  const t = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -56,7 +58,7 @@ export default function LoginPage() {
 
       router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Invalid email or password');
+      setError(err instanceof Error ? err.message : t('auth.invalidCredentials'));
       setLoading(false);
     }
   };
@@ -66,8 +68,8 @@ export default function LoginPage() {
       <div className={styles.card}>
         <div className={styles.header}>
           <div className={styles.logo}>JAWS <span>CO.</span></div>
-          <h1>Welcome Back</h1>
-          <p>Sign in to access your account</p>
+          <h1>{t('auth.welcomeBack')}</h1>
+          <p>{t('auth.signInToAccess')}</p>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -75,7 +77,7 @@ export default function LoginPage() {
 
           <div className={styles.field}>
             <label htmlFor="email" className={styles.label}>
-              Email Address <span>*</span>
+              {t('auth.emailAddress')} <span>*</span>
             </label>
             <input
               id="email"
@@ -83,7 +85,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
-              placeholder="you@company.com"
+              placeholder={t('auth.emailPlaceholder')}
               required
               autoComplete="email"
             />
@@ -91,7 +93,7 @@ export default function LoginPage() {
 
           <div className={styles.field}>
             <label htmlFor="password" className={styles.label}>
-              Password <span>*</span>
+              {t('auth.password')} <span>*</span>
             </label>
             <input
               id="password"
@@ -99,20 +101,20 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={styles.input}
-              placeholder="Enter your password"
+              placeholder={t('auth.passwordPlaceholder')}
               required
               autoComplete="current-password"
             />
           </div>
 
           <button type="submit" className={styles.submitBtn} disabled={loading}>
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loading ? t('auth.signingIn') : t('auth.signIn')}
           </button>
         </form>
 
         <div className={styles.footer}>
-          Don&apos;t have an account?{' '}
-          <Link href="/register">Create one</Link>
+          {t('auth.noAccount')}{' '}
+          <Link href="/register">{t('auth.createOne')}</Link>
         </div>
       </div>
     </div>

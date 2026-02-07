@@ -1,5 +1,92 @@
-/* TSMC-style horizontal language switcher */
+/* Compact dropdown for public navbar */
+.dropdown {
+  position: relative;
+}
 
+.dropdownBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--black);
+  transition: all 0.2s ease;
+}
+
+.dropdownBtn:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.currentLang {
+  white-space: nowrap;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: transform 0.2s;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: var(--white, #fff);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  min-width: 160px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--black);
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.dropdownItem:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.dropdownItem.active {
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.dropdownItem.active .langLabel {
+  color: var(--gold, #C5A059);
+  font-weight: 600;
+}
+
+.langLabel {
+  font-weight: 500;
+}
+
+.langName {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Horizontal switcher for sidebar (admin/dashboard) */
 .switcher {
   display: flex;
   align-items: center;
@@ -50,37 +137,7 @@
   margin: 0 2px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .switcher {
-    font-size: 0.75rem;
-    padding: 3px 6px;
-  }
-
-  .langBtn {
-    padding: 3px 6px;
-    font-size: 0.75rem;
-  }
-
-  .separator {
-    height: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .switcher {
-    font-size: 0.7rem;
-    gap: 1px;
-    padding: 2px 4px;
-  }
-
-  .langBtn {
-    padding: 2px 4px;
-    font-size: 0.7rem;
-  }
-}
-
-/* For sidebar use (admin/dashboard) */
+/* Sidebar styling for admin/dashboard */
 .switcher.sidebar {
   background: rgba(255, 255, 255, 0.1);
   padding: 6px 10px;
@@ -105,4 +162,44 @@
 
 .switcher.sidebar .separator {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dropdownBtn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .switcher {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+
+  .langBtn {
+    padding: 3px 6px;
+    font-size: 0.75rem;
+  }
+
+  .separator {
+    height: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdownBtn {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .switcher {
+    font-size: 0.7rem;
+    gap: 1px;
+    padding: 2px 4px;
+  }
+
+  .langBtn {
+    padding: 2px 4px;
+    font-size: 0.7rem;
+  }
 }

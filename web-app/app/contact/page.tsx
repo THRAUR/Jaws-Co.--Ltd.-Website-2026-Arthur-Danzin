@@ -5,6 +5,7 @@
  * Inquiry form with backend submission
  */
 import { useState } from 'react';
+import { useTranslation } from '@/lib/i18n/context';
 import styles from './page.module.css';
 
 type InquiryType = 'sample' | 'oem' | 'technical';
@@ -16,13 +17,8 @@ interface FormData {
   message: string;
 }
 
-const inquiryTypeLabels: Record<InquiryType, string> = {
-  sample: 'Product Sample Request',
-  oem: 'Custom OEM Design',
-  technical: 'Technical Support',
-};
-
 export default function ContactPage() {
+  const t = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -32,6 +28,12 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const inquiryTypeLabels: Record<InquiryType, string> = {
+    sample: t('contact.form.sample'),
+    oem: t('contact.form.oem'),
+    technical: t('contact.form.technical'),
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -62,7 +64,7 @@ export default function ContactPage() {
 
       setSubmitted(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred. Please try again.');
+      setError(err instanceof Error ? err.message : t('contact.error'));
     } finally {
       setLoading(false);
     }
@@ -81,26 +83,19 @@ export default function ContactPage() {
   return (
     <div className={styles.container}>
       <div className={styles.infoCol}>
-        <h1>Contact Us</h1>
-        <p>
-          Have questions about our products? Need technical support or want to discuss
-          custom solutions? Our team is here to help.
-        </p>
+        <h1>{t('contact.title')}</h1>
+        <p>{t('contact.description')}</p>
 
         <div className={styles.contactDetail}>
-          <h4>Headquarters</h4>
-          <p>
-            No. 8, Lane 2, Section 2, Example Road,
-            <br />
-            Taipei City 110, Taiwan (R.O.C.)
-          </p>
+          <h4>{t('contact.headquarters')}</h4>
+          <p>{t('contact.address')}</p>
         </div>
         <div className={styles.contactDetail}>
-          <h4>Email</h4>
+          <h4>{t('contact.email')}</h4>
           <p>sales@jaws.com.tw</p>
         </div>
         <div className={styles.contactDetail}>
-          <h4>Phone</h4>
+          <h4>{t('contact.phone')}</h4>
           <p>+886-2-1234-5678</p>
         </div>
       </div>
@@ -108,42 +103,39 @@ export default function ContactPage() {
       <div className={styles.formCol}>
         {submitted ? (
           <div className={styles.successMessage}>
-            <h2>Thank You!</h2>
-            <p>
-              Your inquiry has been sent successfully. Our team will contact you
-              within 24 hours.
-            </p>
+            <h2>{t('contact.success.title')}</h2>
+            <p>{t('contact.success.message')}</p>
             <button onClick={handleReset} className={styles.resetBtn}>
-              Send Another Message
+              {t('contact.success.reset')}
             </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
             {error && <div className={styles.errorMessage}>{error}</div>}
 
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">{t('contact.form.name')}</label>
             <input
               type="text"
               id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your Name"
+              placeholder={t('contact.form.namePlaceholder')}
               required
             />
 
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t('contact.form.email')}</label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="company@email.com"
+              placeholder={t('contact.form.emailPlaceholder')}
               required
             />
 
-            <label htmlFor="inquiry_type">Inquiry Type</label>
+            <label htmlFor="inquiry_type">{t('contact.form.inquiryType')}</label>
             <select
               id="inquiry_type"
               name="inquiry_type"
@@ -157,19 +149,19 @@ export default function ContactPage() {
               ))}
             </select>
 
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message">{t('contact.form.message')}</label>
             <textarea
               id="message"
               name="message"
               rows={6}
               value={formData.message}
               onChange={handleChange}
-              placeholder="Tell us about your project requirements..."
+              placeholder={t('contact.form.messagePlaceholder')}
               required
             />
 
             <button type="submit" disabled={loading}>
-              {loading ? 'Sending...' : 'Send Message'}
+              {loading ? t('contact.form.sending') : t('contact.form.submit')}
             </button>
           </form>
         )}

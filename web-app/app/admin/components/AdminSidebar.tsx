@@ -75,10 +75,10 @@ export default function AdminSidebar({ userEmail }: AdminSidebarProps) {
           <span className={styles.userEmail}>{userEmail}</span>
         </div>
         <button onClick={handleLogout} className={styles.logoutBtn}>
-          Sign Out
+          {t('admin.sidebar.signOut')}
         </button>
         <Link href="/" className={styles.viewSite}>
-          View Live Site
+          {t('admin.sidebar.viewLiveSite')}
         </Link>
       </div>
     </aside>

@@ -42,3 +42,36 @@ h1, h2, h3, h4, h5, h6 {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ===== Multi-language Support ===== */
+
+/* CJK (Chinese, Japanese, Korean) text handling */
+html[lang="ja"],
+html[lang="zh-TW"],
+html[lang="zh-CN"] {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+/* European languages with longer words */
+html[lang="de"],
+html[lang="fr"],
+html[lang="es"],
+html[lang="it"] {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Global text overflow prevention */
+h1, h2, h3, h4, h5, h6, p, span, a, button, label {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Ensure buttons don't overflow */
+button {
+  white-space: normal;
+  text-align: center;
+}

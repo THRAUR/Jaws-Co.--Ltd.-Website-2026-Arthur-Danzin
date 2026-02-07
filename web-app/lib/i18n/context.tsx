@@ -63,30 +63,35 @@ export function LanguageProvider({
   useEffect(() => {
     setMounted(true);
 
+    let detectedLang: LanguageCode = DEFAULT_LANGUAGE;
+
     // First, try localStorage
     const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
     if (stored && isValidLanguage(stored)) {
-      setLanguageState(stored);
-      return;
-    }
+      detectedLang = stored;
+    } else {
+      // Then, try to detect from browser
+      const browserLang = navigator.language.split('-')[0];
+      const browserFullLang = navigator.language;
 
-    // Then, try to detect from browser
-    const browserLang = navigator.language.split('-')[0];
-    const browserFullLang = navigator.language;
-
-    // Check for exact match (e.g., zh-TW)
-    if (isValidLanguage(browserFullLang)) {
-      setLanguageState(browserFullLang);
-      return;
-    }
-
-    // Check for language code match (e.g., zh -> zh-TW)
-    for (const code of allowed) {
-      if (code.startsWith(browserLang)) {
-        setLanguageState(code);
-        return;
+      // Check for exact match (e.g., zh-TW)
+      if (isValidLanguage(browserFullLang)) {
+        detectedLang = browserFullLang;
+      } else {
+        // Check for language code match (e.g., zh -> zh-TW)
+        for (const code of allowed) {
+          if (code.startsWith(browserLang)) {
+            detectedLang = code;
+            break;
+          }
+        }
       }
     }
+
+    setLanguageState(detectedLang);
+
+    // Set the HTML lang attribute for CSS targeting
+    document.documentElement.lang = LANGUAGES[detectedLang].htmlLang;
   }, [allowed, isValidLanguage]);
 
   // Set language and persist to storage

@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslation } from '@/lib/i18n/context';
 import styles from './page.module.css';
 
 export default function Home() {
+    const t = useTranslation();
+
     return (
         <main>
             <header className={styles.hero}>
@@ -20,11 +25,11 @@ export default function Home() {
                 </video>
 
                 <div className={styles.heroText}>
-                    <h1>The Gold Standard<br />in <i>Connector</i> Prowess.</h1>
-                    <p>Combining 50 years of Taiwanese manufacturing heritage with modern precision engineering. We connect the world&apos;s most demanding technologies.</p>
+                    <h1>{t('home.heroTitle')}</h1>
+                    <p>{t('home.heroSubtitle')}</p>
                     <div className={styles.actions}>
-                        <Link href="/products" className={styles.btn}>View Catalog</Link>
-                        <Link href="/about" className={`${styles.btn} ${styles.btnSec}`}>Our Story</Link>
+                        <Link href="/products" className={styles.btn}>{t('home.viewCatalog')}</Link>
+                        <Link href="/about" className={`${styles.btn} ${styles.btnSec}`}>{t('home.ourStory')}</Link>
                     </div>
                 </div>
             </header>
@@ -33,16 +38,16 @@ export default function Home() {
             <section className={styles.whyUs}>
                 <div className={styles.whyContainer}>
                     <div className={styles.statBox}>
-                        <h2>50+</h2>
-                        <p>Years Experience</p>
+                        <h2>{t('home.stats.years')}</h2>
+                        <p>{t('home.stats.yearsLabel')}</p>
                     </div>
                     <div className={styles.statBox}>
-                        <h2>100%</h2>
-                        <p>Made in Taiwan</p>
+                        <h2>{t('home.stats.taiwan')}</h2>
+                        <p>{t('home.stats.taiwanLabel')}</p>
                     </div>
                     <div className={styles.statBox}>
-                        <h2>ISO</h2>
-                        <p>9001 Certified</p>
+                        <h2>{t('home.stats.iso')}</h2>
+                        <p>{t('home.stats.isoLabel')}</p>
                     </div>
                 </div>
             </section>
@@ -59,30 +64,30 @@ export default function Home() {
                 </div>
 
                 <div className={styles.ftContent}>
-                    <h2>0.5mm Series</h2>
-                    <p>Our flagship FPC/FFC connectors designed for high-density applications. Featuring robust locking mechanisms and superior conductivity.</p>
-                    <Link href="/products?category=0.5%20mm" className={styles.ftLink}>Explore Specs</Link>
+                    <h2>{t('home.featured.title')}</h2>
+                    <p>{t('home.featured.description')}</p>
+                    <Link href="/products?category=0.5%20mm" className={styles.ftLink}>{t('home.featured.link')}</Link>
                 </div>
             </section>
 
             {/* INDUSTRIES SERVED - New Section */}
             <section className={styles.industries}>
                 <div className={styles.indHeader}>
-                    <h2>Industries Served</h2>
-                    <p>Powering the next generation of devices.</p>
+                    <h2>{t('home.industries.title')}</h2>
+                    <p>{t('home.industries.subtitle')}</p>
                 </div>
                 <div className={styles.indGrid}>
                     <div className={styles.indCard}>
-                        <h3>Automotive</h3>
-                        <p>In-vehicle infotainment and sensors.</p>
+                        <h3>{t('home.industries.automotive')}</h3>
+                        <p>{t('home.industries.automotiveDesc')}</p>
                     </div>
                     <div className={styles.indCard}>
-                        <h3>Industrial</h3>
-                        <p>Robotics and automation control.</p>
+                        <h3>{t('home.industries.industrial')}</h3>
+                        <p>{t('home.industries.industrialDesc')}</p>
                     </div>
                     <div className={styles.indCard}>
-                        <h3>Consumer</h3>
-                        <p>Laptops, tablets, and wearables.</p>
+                        <h3>{t('home.industries.consumer')}</h3>
+                        <p>{t('home.industries.consumerDesc')}</p>
                     </div>
                 </div>
             </section>

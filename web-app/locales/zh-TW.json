@@ -41,7 +41,7 @@
   },
   "about": {
     "heroTitle": "自1975年起，始终致力于制造卓越品质。",
-    "heroDescription": "鲨齿有限公司不仅是分销商，更是立足于台湾台北的专业制造商。在充斥着通用组件的行业中，我们凭借可追溯性、材料纯度及定制设计能力脱颖而出，这些优势是其他企业无法企及的。",
+    "heroDescription": "Jaws Co., Ltd.不僅是分銷商，更是立足於台灣台北的專業製造商。在充斥著通用組件的行業中，我們憑藉可追溯性、材料純度及定制設計能力脫穎而出，這些優勢是其他企業無法企及的。",
     "stats": {
       "years": "50+",
       "yearsLabel": "多年经验",
@@ -181,10 +181,10 @@
     "readMore": "阅读文章"
   },
   "footer": {
-    "brand": "JAWS有限公司",
-    "location": "台湾，台北",
-    "copyright": "鲨口有限公司",
-    "isoCertified": "ISO 9001 认证"
+    "brand": "JAWS CO., LTD.",
+    "location": "台北，台灣",
+    "copyright": "Jaws Co., Ltd.",
+    "isoCertified": "ISO 9001 認證"
   },
   "dashboard": {
     "title": "我的仪表盘",
@@ -225,70 +225,153 @@
   },
   "admin": {
     "sidebar": {
-      "dashboard": "仪表盘",
-      "products": "产品",
-      "categories": "分类",
-      "inquiries": "咨询",
-      "news": "新闻"
+      "dashboard": "儀表板",
+      "products": "產品",
+      "categories": "分類",
+      "inquiries": "詢價",
+      "news": "新聞",
+      "signOut": "登出",
+      "viewLiveSite": "瀏覽網站"
     },
     "dashboard": {
-      "title": "管理员仪表盘",
-      "totalProducts": "总产品数",
-      "totalCategories": "总分类",
-      "totalInquiries": "总咨询量",
-      "unreadInquiries": "未读咨询"
+      "title": "儀表板",
+      "subtitle": "歡迎來到 Jaws Co., Ltd. 管理後台",
+      "stats": {
+        "products": "產品",
+        "categories": "分類",
+        "newsArticles": "新聞文章",
+        "newInquiries": "新詢價"
+      },
+      "quickActions": {
+        "title": "快速操作",
+        "addProduct": "新增產品",
+        "writeArticle": "撰寫新聞",
+        "manageCategories": "管理分類"
+      },
+      "gettingStarted": {
+        "title": "開始使用",
+        "productManagement": {
+          "title": "產品管理",
+          "description": "新增、編輯和整理您的 FFC/FPC 連接器產品。直接上傳圖片和 PDF 規格表。"
+        },
+        "newsUpdates": {
+          "title": "新聞與動態",
+          "description": "發布公司新聞、產品公告和產業動態，讓客戶隨時掌握最新資訊。"
+        },
+        "customerInquiries": {
+          "title": "客戶詢價",
+          "description": "查看和管理收到的報價請求、樣品詢問和技術支援訊息。"
+        }
+      }
     },
     "products": {
-      "title": "产品管理",
-      "addNew": "添加产品",
-      "edit": "编辑",
-      "delete": "删除",
-      "confirmDelete": "您确定要删除此产品吗？",
-      "empty": "未找到任何产品。"
+      "title": "產品管理",
+      "subtitle": "產品目錄",
+      "addNew": "新增產品",
+      "edit": "編輯",
+      "delete": "刪除",
+      "search": "搜尋產品...",
+      "allCategories": "所有分類",
+      "filter": "篩選",
+      "confirmDelete": "確定要刪除此產品嗎？",
+      "empty": "未找到任何產品。",
+      "addFirst": "新增您的第一個產品",
+      "image": "圖片",
+      "name": "名稱",
+      "category": "分類",
+      "specs": "規格",
+      "actions": "操作",
+      "uncategorized": "未分類"
     },
     "categories": {
-      "title": "品类管理",
-      "addNew": "添加分类",
-      "edit": "编辑",
-      "delete": "删除",
-      "confirmDelete": "您确定要删除此类别吗？",
-      "empty": "未找到任何分类。"
+      "title": "分類管理",
+      "subtitle": "整理您的產品目錄",
+      "addNew": "新增分類",
+      "edit": "編輯",
+      "delete": "刪除",
+      "save": "儲存",
+      "cancel": "取消",
+      "adding": "新增中...",
+      "namePlaceholder": "分類名稱",
+      "descriptionPlaceholder": "描述（選填）",
+      "confirmDelete": "確定要刪除此分類嗎？",
+      "cannotDelete": "無法刪除有產品的分類。請先移除或重新分配產品。",
+      "empty": "尚無分類。請在上方新增您的第一個分類。",
+      "productCount": "個產品",
+      "productsCount": "個產品"
     },
     "inquiries": {
-      "title": "客户咨询",
-      "markUnread": "标记为未读",
-      "delete": "删除",
-      "replyViaEmail": "通过电子邮件回复",
-      "confirmDelete": "您确定要删除此查询吗？",
-      "empty": "目前尚无咨询。通过联系表单提交的咨询将显示在此处。"
+      "title": "客戶詢價",
+      "subtitle": "客戶訊息與請求",
+      "newInquiries": "新的",
+      "markUnread": "標記為未讀",
+      "delete": "刪除",
+      "replyViaEmail": "透過電子郵件回覆",
+      "confirmDelete": "確定要刪除此詢價嗎？",
+      "empty": "目前尚無詢價。透過聯絡表單提交的詢價將顯示在此處。"
     },
     "news": {
-      "title": "新闻管理",
-      "addNew": "添加文章",
-      "edit": "编辑",
-      "delete": "删除",
-      "confirmDelete": "您确定要删除这篇文章吗？",
-      "empty": "未找到任何文章。"
+      "title": "新聞與文章",
+      "subtitle": "管理公司新聞和動態",
+      "addNew": "撰寫文章",
+      "edit": "編輯",
+      "delete": "刪除",
+      "confirmDelete": "確定要刪除這篇文章嗎？",
+      "empty": "尚無文章。",
+      "writeFirst": "撰寫您的第一篇文章",
+      "tableTitle": "標題",
+      "status": "狀態",
+      "published": "已發布",
+      "draft": "草稿",
+      "publishedAt": "發布日期"
     }
   },
   "auth": {
-    "login": "登录",
-    "register": "注册",
-    "email": "电子邮件",
-    "password": "密码",
-    "confirmPassword": "确认密码",
+    "login": "登入",
+    "register": "註冊",
+    "email": "電子郵件",
+    "password": "密碼",
+    "confirmPassword": "確認密碼",
+    "confirmPasswordPlaceholder": "確認密碼",
     "fullName": "全名",
-    "forgotPassword": "忘记密码？",
-    "noAccount": "还没有账户？",
-    "hasAccount": "已有账户？",
-    "signIn": "登录",
-    "signUp": "注册",
-    "signingIn": "登录中...",
-    "signingUp": "正在注册...",
-    "invalidCredentials": "电子邮件或密码无效",
-    "emailInUse": "该邮箱已被使用",
-    "passwordMismatch": "密码不匹配",
-    "error": "发生错误。请重试。"
+    "fullNamePlaceholder": "王小明",
+    "forgotPassword": "忘記密碼？",
+    "noAccount": "還沒有帳戶？",
+    "hasAccount": "已有帳戶？",
+    "signIn": "登入",
+    "signInLink": "登入",
+    "signUp": "註冊",
+    "signingIn": "登入中...",
+    "signingUp": "註冊中...",
+    "invalidCredentials": "電子郵件或密碼無效",
+    "emailInUse": "此電子郵件已被使用",
+    "passwordMismatch": "密碼不相符",
+    "passwordTooShort": "密碼至少需要8個字元",
+    "error": "發生錯誤，請重試。",
+    "welcomeBack": "歡迎回來",
+    "signInToAccess": "登入以存取您的帳戶",
+    "emailAddress": "電子郵件地址",
+    "emailPlaceholder": "you@company.com",
+    "passwordPlaceholder": "輸入您的密碼",
+    "createOne": "建立帳戶",
+    "createAccount": "建立帳戶",
+    "createAccountBtn": "建立帳戶",
+    "creatingAccount": "建立帳戶中...",
+    "joinUs": "加入我們以管理您的訂單和詢價",
+    "companyName": "公司名稱",
+    "companyPlaceholder": "您的公司",
+    "jobTitle": "職稱",
+    "jobTitlePlaceholder": "採購經理",
+    "phoneNumber": "電話號碼",
+    "phonePlaceholder": "+886 2 1234 5678",
+    "countryRegion": "國家/地區",
+    "selectCountry": "選擇您的國家",
+    "accountCredentials": "帳戶認證資訊",
+    "workEmail": "公司電子郵件",
+    "minCharacters": "最少8個字元",
+    "registrationSuccess": "註冊成功！",
+    "checkEmail": "請查看您的電子郵件以驗證帳戶。",
+    "returnToLogin": "返回登入頁面"
   },
   "common": {
     "loading": "正在加载...",

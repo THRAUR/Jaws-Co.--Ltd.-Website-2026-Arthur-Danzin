@@ -3,6 +3,7 @@
  * Manage product categories with inline editing
  */
 import { createClient } from '@/lib/supabase/server';
+import { CategoriesHeader } from './CategoriesHeader';
 import { CategoryList } from './CategoryList';
 import styles from './page.module.css';
 
@@ -22,12 +23,7 @@ export default async function AdminCategories() {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <div>
-          <h1 className={styles.title}>Categories</h1>
-          <p className={styles.subtitle}>Organize your product catalog</p>
-        </div>
-      </header>
+      <CategoriesHeader />
 
       {error ? (
         <div className={styles.error}>Error loading categories: {error.message}</div>

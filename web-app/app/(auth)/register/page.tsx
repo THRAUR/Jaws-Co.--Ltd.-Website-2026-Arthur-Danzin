@@ -6,10 +6,12 @@
  */
 import { useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import { useTranslation } from '@/lib/i18n/context';
 import Link from 'next/link';
 import styles from '../auth.module.css';
 
 export default function RegisterPage() {
+  const t = useTranslation();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -36,14 +38,14 @@ export default function RegisterPage() {
 
     // Validate passwords match
     if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match');
+      setError(t('auth.passwordMismatch'));
       setLoading(false);
       return;
     }
 
     // Validate password strength
     if (formData.password.length < 8) {
-      setError('Password must be at least 8 characters');
+      setError(t('auth.passwordTooShort'));
       setLoading(false);
       return;
     }
@@ -69,7 +71,7 @@ export default function RegisterPage() {
 
       setSuccess(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Registration failed. Please try again.');
+      setError(err instanceof Error ? err.message : t('auth.error'));
       setLoading(false);
     }
   };
@@ -80,12 +82,12 @@ export default function RegisterPage() {
         <div className={styles.card}>
           <div className={styles.header}>
             <div className={styles.logo}>JAWS <span>CO.</span></div>
-            <h1>Registration Successful!</h1>
+            <h1>{t('auth.registrationSuccess')}</h1>
           </div>
           <div className={styles.success}>
-            <p>Please check your email to verify your account.</p>
+            <p>{t('auth.checkEmail')}</p>
             <p style={{ marginTop: '12px' }}>
-              <Link href="/login">Return to Login</Link>
+              <Link href="/login">{t('auth.returnToLogin')}</Link>
             </p>
           </div>
         </div>
@@ -98,8 +100,8 @@ export default function RegisterPage() {
       <div className={styles.card} style={{ maxWidth: '520px' }}>
         <div className={styles.header}>
           <div className={styles.logo}>JAWS <span>CO.</span></div>
-          <h1>Create Account</h1>
-          <p>Join us to manage your orders and inquiries</p>
+          <h1>{t('auth.createAccount')}</h1>
+          <p>{t('auth.joinUs')}</p>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -108,7 +110,7 @@ export default function RegisterPage() {
           <div className={styles.row}>
             <div className={styles.field}>
               <label htmlFor="full_name" className={styles.label}>
-                Full Name <span>*</span>
+                {t('auth.fullName')} <span>*</span>
               </label>
               <input
                 id="full_name"
@@ -117,14 +119,14 @@ export default function RegisterPage() {
                 value={formData.full_name}
                 onChange={handleChange}
                 className={styles.input}
-                placeholder="John Smith"
+                placeholder={t('auth.fullNamePlaceholder')}
                 required
               />
             </div>
 
             <div className={styles.field}>
               <label htmlFor="company_name" className={styles.label}>
-                Company Name
+                {t('auth.companyName')}
               </label>
               <input
                 id="company_name"
@@ -133,7 +135,7 @@ export default function RegisterPage() {
                 value={formData.company_name}
                 onChange={handleChange}
                 className={styles.input}
-                placeholder="Your Company"
+                placeholder={t('auth.companyPlaceholder')}
               />
             </div>
           </div>
@@ -141,7 +143,7 @@ export default function RegisterPage() {
           <div className={styles.row}>
             <div className={styles.field}>
               <label htmlFor="job_title" className={styles.label}>
-                Job Title
+                {t('auth.jobTitle')}
               </label>
               <input
                 id="job_title"
@@ -150,13 +152,13 @@ export default function RegisterPage() {
                 value={formData.job_title}
                 onChange={handleChange}
                 className={styles.input}
-                placeholder="Purchasing Manager"
+                placeholder={t('auth.jobTitlePlaceholder')}
               />
             </div>
 
             <div className={styles.field}>
               <label htmlFor="phone" className={styles.label}>
-                Phone Number
+                {t('auth.phoneNumber')}
               </label>
               <input
                 id="phone"
@@ -165,14 +167,14 @@ export default function RegisterPage() {
                 value={formData.phone}
                 onChange={handleChange}
                 className={styles.input}
-                placeholder="+1 234 567 8900"
+                placeholder={t('auth.phonePlaceholder')}
               />
             </div>
           </div>
 
           <div className={styles.field}>
             <label htmlFor="country" className={styles.label}>
-              Country / Region
+              {t('auth.countryRegion')}
             </label>
             <select
               id="country"
@@ -181,33 +183,33 @@ export default function RegisterPage() {
               onChange={handleChange}
               className={styles.input}
             >
-              <option value="">Select your country</option>
-              <option value="US">United States</option>
-              <option value="CN">China</option>
-              <option value="TW">Taiwan</option>
-              <option value="JP">Japan</option>
-              <option value="KR">South Korea</option>
-              <option value="DE">Germany</option>
-              <option value="GB">United Kingdom</option>
-              <option value="FR">France</option>
-              <option value="CA">Canada</option>
-              <option value="AU">Australia</option>
-              <option value="SG">Singapore</option>
-              <option value="MY">Malaysia</option>
-              <option value="TH">Thailand</option>
-              <option value="VN">Vietnam</option>
-              <option value="IN">India</option>
-              <option value="MX">Mexico</option>
-              <option value="BR">Brazil</option>
-              <option value="OTHER">Other</option>
+              <option value="">{t('auth.selectCountry')}</option>
+              <option value="US">{t('countries.US')}</option>
+              <option value="CN">{t('countries.CN')}</option>
+              <option value="TW">{t('countries.TW')}</option>
+              <option value="JP">{t('countries.JP')}</option>
+              <option value="KR">{t('countries.KR')}</option>
+              <option value="DE">{t('countries.DE')}</option>
+              <option value="GB">{t('countries.GB')}</option>
+              <option value="FR">{t('countries.FR')}</option>
+              <option value="CA">{t('countries.CA')}</option>
+              <option value="AU">{t('countries.AU')}</option>
+              <option value="SG">{t('countries.SG')}</option>
+              <option value="MY">{t('countries.MY')}</option>
+              <option value="TH">{t('countries.TH')}</option>
+              <option value="VN">{t('countries.VN')}</option>
+              <option value="IN">{t('countries.IN')}</option>
+              <option value="MX">{t('countries.MX')}</option>
+              <option value="BR">{t('countries.BR')}</option>
+              <option value="OTHER">{t('countries.OTHER')}</option>
             </select>
           </div>
 
-          <div className={styles.divider}>Account Credentials</div>
+          <div className={styles.divider}>{t('auth.accountCredentials')}</div>
 
           <div className={styles.field}>
             <label htmlFor="email" className={styles.label}>
-              Work Email <span>*</span>
+              {t('auth.workEmail')} <span>*</span>
             </label>
             <input
               id="email"
@@ -216,7 +218,7 @@ export default function RegisterPage() {
               value={formData.email}
               onChange={handleChange}
               className={styles.input}
-              placeholder="you@company.com"
+              placeholder={t('auth.emailPlaceholder')}
               required
               autoComplete="email"
             />
@@ -225,7 +227,7 @@ export default function RegisterPage() {
           <div className={styles.row}>
             <div className={styles.field}>
               <label htmlFor="password" className={styles.label}>
-                Password <span>*</span>
+                {t('auth.password')} <span>*</span>
               </label>
               <input
                 id="password"
@@ -234,7 +236,7 @@ export default function RegisterPage() {
                 value={formData.password}
                 onChange={handleChange}
                 className={styles.input}
-                placeholder="Min. 8 characters"
+                placeholder={t('auth.minCharacters')}
                 required
                 autoComplete="new-password"
               />
@@ -242,7 +244,7 @@ export default function RegisterPage() {
 
             <div className={styles.field}>
               <label htmlFor="confirmPassword" className={styles.label}>
-                Confirm Password <span>*</span>
+                {t('auth.confirmPassword')} <span>*</span>
               </label>
               <input
                 id="confirmPassword"
@@ -251,7 +253,7 @@ export default function RegisterPage() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 className={styles.input}
-                placeholder="Confirm password"
+                placeholder={t('auth.confirmPasswordPlaceholder')}
                 required
                 autoComplete="new-password"
               />
@@ -259,13 +261,13 @@ export default function RegisterPage() {
           </div>
 
           <button type="submit" className={styles.submitBtn} disabled={loading}>
-            {loading ? 'Creating Account...' : 'Create Account'}
+            {loading ? t('auth.creatingAccount') : t('auth.createAccountBtn')}
           </button>
         </form>
 
         <div className={styles.footer}>
-          Already have an account?{' '}
-          <Link href="/login">Sign in</Link>
+          {t('auth.hasAccount')}{' '}
+          <Link href="/login">{t('auth.signInLink')}</Link>
         </div>
       </div>
     </div>

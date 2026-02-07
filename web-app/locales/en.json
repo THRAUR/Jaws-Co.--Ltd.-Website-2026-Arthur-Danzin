@@ -178,7 +178,8 @@
     "comingSoon": "Coming Soon",
     "comingSoonDesc": "We're working on exciting news to share with you. Check back soon!",
     "error": "Error loading articles. Please try again later.",
-    "readMore": "Read Article"
+    "readMore": "Read Article",
+    "recently": "Recently"
   },
   "footer": {
     "brand": "JAWS CO., LTD.",
@@ -229,33 +230,81 @@
       "products": "Products",
       "categories": "Categories",
       "inquiries": "Inquiries",
-      "news": "News"
+      "news": "News",
+      "signOut": "Sign Out",
+      "viewLiveSite": "View Live Site"
     },
     "dashboard": {
-      "title": "Admin Dashboard",
-      "totalProducts": "Total Products",
-      "totalCategories": "Total Categories",
-      "totalInquiries": "Total Inquiries",
-      "unreadInquiries": "Unread Inquiries"
+      "title": "Dashboard",
+      "subtitle": "Welcome to the Jaws Co., Ltd. admin panel",
+      "stats": {
+        "products": "Products",
+        "categories": "Categories",
+        "newsArticles": "News Articles",
+        "newInquiries": "New Inquiries"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "addProduct": "Add New Product",
+        "writeArticle": "Write News Article",
+        "manageCategories": "Manage Categories"
+      },
+      "gettingStarted": {
+        "title": "Getting Started",
+        "productManagement": {
+          "title": "Product Management",
+          "description": "Add, edit, and organize your FFC/FPC connector products. Upload images and PDF spec sheets directly."
+        },
+        "newsUpdates": {
+          "title": "News & Updates",
+          "description": "Publish company news, product announcements, and industry updates to keep customers informed."
+        },
+        "customerInquiries": {
+          "title": "Customer Inquiries",
+          "description": "View and manage incoming RFQ requests, sample inquiries, and technical support messages."
+        }
+      }
     },
     "products": {
-      "title": "Product Management",
+      "title": "Products",
+      "subtitle": "products in catalog",
       "addNew": "Add Product",
       "edit": "Edit",
       "delete": "Delete",
+      "search": "Search products...",
+      "allCategories": "All Categories",
+      "filter": "Filter",
       "confirmDelete": "Are you sure you want to delete this product?",
-      "empty": "No products found."
+      "empty": "No products found.",
+      "addFirst": "Add your first product",
+      "image": "Image",
+      "name": "Name",
+      "category": "Category",
+      "specs": "Specs",
+      "actions": "Actions",
+      "uncategorized": "Uncategorized"
     },
     "categories": {
-      "title": "Category Management",
+      "title": "Categories",
+      "subtitle": "Organize your product catalog",
       "addNew": "Add Category",
       "edit": "Edit",
       "delete": "Delete",
+      "save": "Save",
+      "cancel": "Cancel",
+      "adding": "Adding...",
+      "namePlaceholder": "Category name",
+      "descriptionPlaceholder": "Description (optional)",
       "confirmDelete": "Are you sure you want to delete this category?",
-      "empty": "No categories found."
+      "cannotDelete": "Cannot delete category with products. Remove or reassign products first.",
+      "empty": "No categories yet. Add your first category above.",
+      "productCount": "product",
+      "productsCount": "products"
     },
     "inquiries": {
-      "title": "Customer Inquiries",
+      "title": "Inquiries",
+      "subtitle": "Customer messages and requests",
+      "newInquiries": "new",
       "markUnread": "Mark Unread",
       "delete": "Delete",
       "replyViaEmail": "Reply via Email",
@@ -263,12 +312,19 @@
       "empty": "No inquiries yet. Inquiries from the contact form will appear here."
     },
     "news": {
-      "title": "News Management",
-      "addNew": "Add Article",
+      "title": "News & Articles",
+      "subtitle": "Manage company news and updates",
+      "addNew": "Write Article",
       "edit": "Edit",
       "delete": "Delete",
       "confirmDelete": "Are you sure you want to delete this article?",
-      "empty": "No articles found."
+      "empty": "No articles yet.",
+      "writeFirst": "Write your first article",
+      "tableTitle": "Title",
+      "status": "Status",
+      "published": "Published",
+      "draft": "Draft",
+      "publishedAt": "Published"
     }
   },
   "auth": {
@@ -277,18 +333,66 @@
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm password",
     "fullName": "Full Name",
+    "fullNamePlaceholder": "John Smith",
     "forgotPassword": "Forgot password?",
     "noAccount": "Don't have an account?",
     "hasAccount": "Already have an account?",
     "signIn": "Sign In",
+    "signInLink": "Sign in",
     "signUp": "Sign Up",
     "signingIn": "Signing in...",
     "signingUp": "Signing up...",
     "invalidCredentials": "Invalid email or password",
     "emailInUse": "Email already in use",
     "passwordMismatch": "Passwords do not match",
-    "error": "An error occurred. Please try again."
+    "passwordTooShort": "Password must be at least 8 characters",
+    "error": "An error occurred. Please try again.",
+    "welcomeBack": "Welcome Back",
+    "signInToAccess": "Sign in to access your account",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "you@company.com",
+    "passwordPlaceholder": "Enter your password",
+    "createOne": "Create one",
+    "createAccount": "Create Account",
+    "createAccountBtn": "Create Account",
+    "creatingAccount": "Creating Account...",
+    "joinUs": "Join us to manage your orders and inquiries",
+    "companyName": "Company Name",
+    "companyPlaceholder": "Your Company",
+    "jobTitle": "Job Title",
+    "jobTitlePlaceholder": "Purchasing Manager",
+    "phoneNumber": "Phone Number",
+    "phonePlaceholder": "+1 234 567 8900",
+    "countryRegion": "Country / Region",
+    "selectCountry": "Select your country",
+    "accountCredentials": "Account Credentials",
+    "workEmail": "Work Email",
+    "minCharacters": "Min. 8 characters",
+    "registrationSuccess": "Registration Successful!",
+    "checkEmail": "Please check your email to verify your account.",
+    "returnToLogin": "Return to Login"
+  },
+  "countries": {
+    "US": "United States",
+    "CN": "China",
+    "TW": "Taiwan",
+    "JP": "Japan",
+    "KR": "South Korea",
+    "DE": "Germany",
+    "GB": "United Kingdom",
+    "FR": "France",
+    "CA": "Canada",
+    "AU": "Australia",
+    "SG": "Singapore",
+    "MY": "Malaysia",
+    "TH": "Thailand",
+    "VN": "Vietnam",
+    "IN": "India",
+    "MX": "Mexico",
+    "BR": "Brazil",
+    "OTHER": "Other"
   },
   "common": {
     "loading": "Loading...",

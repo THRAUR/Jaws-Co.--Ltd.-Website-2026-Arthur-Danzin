@@ -1,16 +1,16 @@
+'use client';
+
+import { useTranslation } from '@/lib/i18n/context';
 import styles from './page.module.css';
 
-export const metadata = {
-    title: 'About Jaws Co., Ltd.',
-    description: 'Learn about our 50-year history of manufacturing excellence in Taipei.',
-};
-
 export default function AboutPage() {
+    const t = useTranslation();
+
     return (
         <div className={styles.container}>
             <section className={styles.storyHero}>
-                <h1>Manufacturing Excellence<br />Since 1975.</h1>
-                <p>Jaws Co., Ltd. is not just a distributor; we are a dedicated manufacturer based in Taipei, Taiwan. In an industry flooded with generic components, we stand apart by offering <b>traceability, material purity, and custom design capabilities</b> that others cannot match.</p>
+                <h1>{t('about.heroTitle')}</h1>
+                <p>{t('about.heroDescription')}</p>
             </section>
 
             <div className={styles.imageBlock}>
@@ -19,40 +19,40 @@ export default function AboutPage() {
 
             <section className={styles.statsGrid}>
                 <div className={styles.stat}>
-                    <h2>50+</h2>
-                    <p>Years of Experience</p>
+                    <h2>{t('about.stats.years')}</h2>
+                    <p>{t('about.stats.yearsLabel')}</p>
                 </div>
                 <div className={styles.stat}>
-                    <h2>100%</h2>
-                    <p>Made in Taiwan</p>
+                    <h2>{t('about.stats.taiwan')}</h2>
+                    <p>{t('about.stats.taiwanLabel')}</p>
                 </div>
                 <div className={styles.stat}>
-                    <h2>ISO</h2>
-                    <p>9001:2015 Certified</p>
+                    <h2>{t('about.stats.iso')}</h2>
+                    <p>{t('about.stats.isoLabel')}</p>
                 </div>
             </section>
 
             <section className={styles.timeline}>
-                <h2>Our Journey</h2>
+                <h2>{t('about.timeline.title')}</h2>
                 <div className={styles.milestone}>
                     <span>1975</span>
-                    <h3>Founded in Taipei, Taiwan.</h3>
-                    <p>Started as a small mold-making workshop.</p>
+                    <h3>{t('about.timeline.1975.title')}</h3>
+                    <p>{t('about.timeline.1975.description')}</p>
                 </div>
                 <div className={styles.milestone}>
                     <span>1998</span>
-                    <h3>Expansion to FPC Connectors</h3>
-                    <p>Launched the first generation of flexible circuit connectors.</p>
+                    <h3>{t('about.timeline.1998.title')}</h3>
+                    <p>{t('about.timeline.1998.description')}</p>
                 </div>
                 <div className={styles.milestone}>
                     <span>2010</span>
-                    <h3>ISO 9001 Certification</h3>
-                    <p>Formalized our commitment to international quality standards.</p>
+                    <h3>{t('about.timeline.2010.title')}</h3>
+                    <p>{t('about.timeline.2010.description')}</p>
                 </div>
                 <div className={styles.milestone}>
                     <span>2026</span>
-                    <h3>The New Digital Era</h3>
-                    <p>Launching our new digital platform to serve global engineers.</p>
+                    <h3>{t('about.timeline.2026.title')}</h3>
+                    <p>{t('about.timeline.2026.description')}</p>
                 </div>
             </section>
         </div>
