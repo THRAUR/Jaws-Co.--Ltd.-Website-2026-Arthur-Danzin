@@ -7,6 +7,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { useTranslation } from '@/lib/i18n/context';
 import type { Inquiry } from '@/types/database';
 import styles from './page.module.css';
 
@@ -14,24 +15,25 @@ interface InquiryListProps {
   initialInquiries: Inquiry[];
 }
 
-const typeLabels: Record<string, string> = {
-  rfq: 'RFQ',
-  sample: 'Sample',
-  oem: 'OEM',
-  technical: 'Support',
-};
-
-const getFormSource = (inquiryType: string): { label: string; color: string } => {
-  if (inquiryType === 'rfq') {
-    return { label: 'Quote Form', color: '#C5A059' }; // gold
-  }
-  return { label: 'Contact Form', color: '#2563eb' }; // blue
-};
-
 export function InquiryList({ initialInquiries }: InquiryListProps) {
   const router = useRouter();
+  const t = useTranslation();
   const [inquiries, setInquiries] = useState(initialInquiries);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  const typeLabels: Record<string, string> = {
+    rfq: 'RFQ',
+    sample: t('dashboard.type.sample'),
+    oem: 'OEM',
+    technical: t('dashboard.type.technical'),
+  };
+
+  const getFormSource = (inquiryType: string): { label: string; color: string } => {
+    if (inquiryType === 'rfq') {
+      return { label: t('dashboard.source.quoteForm'), color: '#C5A059' }; // gold
+    }
+    return { label: t('dashboard.source.contactForm'), color: '#2563eb' }; // blue
+  };
 
   const handleToggle = async (inquiry: Inquiry) => {
     // Toggle expansion
@@ -72,7 +74,7 @@ export function InquiryList({ initialInquiries }: InquiryListProps) {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this inquiry?')) return;
+    if (!confirm(t('admin.inquiries.confirmDelete'))) return;
 
     const supabase = createClient();
     const { error } = await supabase.from('inquiries').delete().eq('id', id);
@@ -88,7 +90,7 @@ export function InquiryList({ initialInquiries }: InquiryListProps) {
   if (inquiries.length === 0) {
     return (
       <div className={styles.empty}>
-        No inquiries yet. Inquiries from the contact form will appear here.
+        {t('admin.inquiries.empty')}
       </div>
     );
   }
@@ -148,21 +150,21 @@ export function InquiryList({ initialInquiries }: InquiryListProps) {
                   href={`mailto:${inquiry.email}?subject=Re: ${typeLabels[inquiry.inquiry_type]} Inquiry - Jaws Co., Ltd.`}
                   className={styles.replyBtn}
                 >
-                  Reply via Email
+                  {t('admin.inquiries.replyViaEmail')}
                 </a>
                 {inquiry.is_read && (
                   <button
                     onClick={() => handleMarkUnread(inquiry.id)}
                     className={styles.markBtn}
                   >
-                    Mark Unread
+                    {t('admin.inquiries.markUnread')}
                   </button>
                 )}
                 <button
                   onClick={() => handleDelete(inquiry.id)}
                   className={styles.deleteBtn}
                 >
-                  Delete
+                  {t('admin.inquiries.delete')}
                 </button>
               </div>
             </div>
